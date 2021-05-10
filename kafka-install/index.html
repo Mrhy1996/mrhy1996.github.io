@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Kafka的安装与使用 - mrhy&#039;s blogs</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="mrhy&#039;s blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="mrhy&#039;s blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="最近，因为工作原因，要去学习kafka，利用闲余时间搭建了一个kafka的单机demo，现在记录一下。"><meta property="og:type" content="blog"><meta property="og:title" content="Kafka的安装与使用"><meta property="og:url" content="https://mrhy1996.github.io/kafka-install/"><meta property="og:site_name" content="mrhy&#039;s blogs"><meta property="og:description" content="最近，因为工作原因，要去学习kafka，利用闲余时间搭建了一个kafka的单机demo，现在记录一下。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://mrhy1996.github.io/img/og_image.png"><meta property="article:published_time" content="2021-05-10T07:00:52.000Z"><meta property="article:modified_time" content="2021-05-10T10:53:31.010Z"><meta property="article:author" content="mrhy"><meta property="article:tag" content="kafka"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://mrhy1996.github.io/kafka-install/"},"headline":"mrhy's blogs","image":["https://mrhy1996.github.io/img/og_image.png"],"datePublished":"2021-05-10T07:00:52.000Z","dateModified":"2021-05-10T10:53:31.010Z","author":{"@type":"Person","name":"mrhy"},"description":"最近，因为工作原因，要去学习kafka，利用闲余时间搭建了一个kafka的单机demo，现在记录一下。"}</script><link rel="canonical" href="https://mrhy1996.github.io/kafka-install/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="mrhy&#039;s blogs" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Mrhy1996/"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-05-10T07:00:52.000Z" title="5/10/2021, 3:00:52 PM">2021-05-10</time>发表</span><span class="level-item"><time dateTime="2021-05-10T10:53:31.010Z" title="5/10/2021, 6:53:31 PM">2021-05-10</time>更新</span><span class="level-item">17 分钟读完 (大约2500个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">Kafka的安装与使用</h1><div class="content"><p>最近，因为工作原因，要去学习kafka，利用闲余时间搭建了一个kafka的单机demo，现在记录一下。</p>
+<span id="more"></span>
+
+<h1 id="什么是Kafka"><a href="#什么是Kafka" class="headerlink" title="什么是Kafka"></a>什么是Kafka</h1><p>Kafka是由<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Apache%E8%BD%AF%E4%BB%B6%E5%9F%BA%E9%87%91%E4%BC%9A">Apache软件基金会</a>开发的一个开源流处理平台，由<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Scala/2462287">Scala</a>和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Java/85979">Java</a>编写。Kafka是一种高吞吐量的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%88%86%E5%B8%83%E5%BC%8F/19276232">分布式</a>发布订阅消息系统，它可以处理消费者在网站中的所有动作流数据。 它主要结合了三个功能</p>
+<ol>
+<li><p>To <strong>publish</strong> (write) and <strong>subscribe to</strong> (read) streams of events, including continuous import/export of your data from other systems.</p>
+<p>发布订阅事件流，包括不断的从其他系统中导入或者导出数据</p>
+</li>
+<li><p>To <strong>store</strong> streams of events durably and reliably for as long as you want.</p>
+<p>持久可靠的存储事件流，存储时间由你去决定</p>
+</li>
+<li><p>To <strong>process</strong> streams of events as they occur or retrospectively.</p>
+<p>处理事件流的发生或者追溯</p>
+</li>
+</ol>
+<h1 id="Kafka中的术语和概念"><a href="#Kafka中的术语和概念" class="headerlink" title="Kafka中的术语和概念"></a>Kafka中的术语和概念</h1><p><strong>event</strong>：An <strong>event</strong> records the fact that “something happened” in the world or in your business. It is also called record or message in the documentation. When you read or write data to Kafka, you do this in the form of events. Conceptually, an event has a key, value, timestamp, and optional metadata headers. Here’s an example event:</p>
+<ul>
+<li>Event key: “Alice”</li>
+<li>Event value: “Made a payment of $200 to Bob”</li>
+<li>Event timestamp: “Jun. 25, 2020 at 2:06 p.m.”</li>
+</ul>
+<p>一个事件记录着一个事实，即业务中发生过什么。通常在文档中，也被成为message或者记录。当你在kafka中度或者写数据的时候，你会按照这个事件的格式去做。通常来讲，一个事件通常有一个key，value，时间戳和元数据的操作头。</p>
+<p><strong>Producers</strong>：生产者</p>
+<p><strong>consumers</strong>：消费者</p>
+<p><strong>topic</strong>：Events are organized and durably stored in <strong>topics</strong>. Very simplified, a topic is similar to a folder in a filesystem, and the events are the files in that folder. An example topic name could be “payments”. Topics in Kafka are always multi-producer and multi-subscriber: a topic can have zero, one, or many producers that write events to it, as well as zero, one, or many consumers that subscribe to these events. Events in a topic can be read as often as needed—unlike traditional messaging systems, events are not deleted after consumption. Instead, you define for how long Kafka should retain your events through a per-topic configuration setting, after which old events will be discarded. Kafka’s performance is effectively constant with respect to data size, so storing data for a long time is perfectly fine.</p>
+<p>==事件被有条理和持久性的被存储在topic中，简单的来讲，topic类似于文件系统中的文件夹，事件相当于文件夹中的文件。在kafka中的topics通常有多个生产者和多个订阅者。一个topic通常有0个，1个甚至更多的生产者，同样的，也会有0个，1个，甚至多个消费者去订阅这些事件。与传统的消息系统相比，事件当被消费之后不会被删除。你可以定义多久才会被删除（默认7天）==</p>
+<p><strong>partitioned</strong>：Topics are <strong>partitioned</strong>, meaning a topic is spread over a number of “buckets” located on different Kafka brokers. This distributed placement of your data is very important for scalability because it allows client applications to both read and write the data from/to many brokers at the same time. When a new event is published to a topic, it is actually appended to one of the topic’s partitions. Events with the same event key (e.g., a customer or vehicle ID) are written to the same partition, and Kafka <a target="_blank" rel="noopener" href="http://kafka.apache.org/documentation/#intro_guarantees">guarantees</a> that any consumer of a given topic-partition will always read that partition’s events in exactly the same order as they were written.</p>
+<p>==topics被分区化，意味着一个topic被分成了多个partition，存放在不同的kafka broker上。==</p>
+<h1 id="安装单机版kafka"><a href="#安装单机版kafka" class="headerlink" title="安装单机版kafka"></a>安装单机版kafka</h1><p>官方版本</p>
+<h2 id="下载并解压Kafka"><a href="#下载并解压Kafka" class="headerlink" title="下载并解压Kafka"></a>下载并解压Kafka</h2><p><a target="_blank" rel="noopener" href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.8.0/kafka_2.13-2.8.0.tgz">https://www.apache.org/dyn/closer.cgi?path=/kafka/2.8.0/kafka_2.13-2.8.0.tgz</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#解压</span></span><br><span class="line">$ tar -xzf kafka_2.13-2.8.0.tgz</span><br><span class="line">$ <span class="built_in">cd</span> kafka_2.13-2.8.0</span><br></pre></td></tr></table></figure>
+
+<h2 id="开启kafka环境"><a href="#开启kafka环境" class="headerlink" title="开启kafka环境"></a>开启kafka环境</h2><p>NOTE: Your local environment must have Java 8+ installed.</p>
+<p>本地必须安装java 8+；</p>
+<p>Run the following commands in order to start all services in the correct order:</p>
+<p>开启zookeeper（下载下来的kafka中带zookeeper，或者你可以用自己的环境中的zk）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Start the ZooKeeper service</span></span><br><span class="line"><span class="comment"># Note: Soon, ZooKeeper will no longer be required by Apache Kafka.</span></span><br><span class="line"><span class="comment"># 不久的将来，zookeeper已经不是kafka必须的环境了</span></span><br><span class="line">$ bin/zookeeper-server-start.sh config/zookeeper.properties</span><br></pre></td></tr></table></figure>
+
+<p>打开另外一个命令窗口，运行如下命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Start the Kafka broker service</span></span><br><span class="line">$ bin/kafka-server-start.sh config/server.properties</span><br></pre></td></tr></table></figure>
+
+<p>当所有的环境都启动之后，你的kafka的服务就算是启动起来了。</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>创建一个topic</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092</span><br></pre></td></tr></table></figure>
+
+<p>生产者生产</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092</span><br></pre></td></tr></table></figure>
+
+<p>打开另外一个terminal，打开启动消费者</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092</span><br></pre></td></tr></table></figure>
+
+<p>在生产者发送消息，可以看到在消费者也会收到，至此，一个单机版的kafka已经搭建完成。</p>
+<h1 id="Kafka配置文件详解"><a href="#Kafka配置文件详解" class="headerlink" title="Kafka配置文件详解"></a>Kafka配置文件详解</h1><p>server.properties</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Licensed to the Apache Software Foundation (ASF) under one or more</span></span><br><span class="line"><span class="comment"># contributor license agreements.  See the NOTICE file distributed with</span></span><br><span class="line"><span class="comment"># this work for additional information regarding copyright ownership.</span></span><br><span class="line"><span class="comment"># The ASF licenses this file to You under the Apache License, Version 2.0</span></span><br><span class="line"><span class="comment"># (the &quot;License&quot;); you may not use this file except in compliance with</span></span><br><span class="line"><span class="comment"># the License.  You may obtain a copy of the License at</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#    http://www.apache.org/licenses/LICENSE-2.0</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># limitations under the License.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># see kafka.server.KafkaConfig for additional details and defaults</span></span><br><span class="line"><span class="meta">broker.id</span>=<span class="string">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#   FORMAT:</span></span><br><span class="line"><span class="comment">#     listeners = listener_name://host_name:port</span></span><br><span class="line"><span class="comment">#   EXAMPLE:</span></span><br><span class="line"><span class="comment">#     listeners = PLAINTEXT://your.host.name:9092</span></span><br><span class="line"><span class="attr">listeners</span>=<span class="string">PLAINTEXT://localhost:9092</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># returned from java.net.InetAddress.getCanonicalHostName().</span></span><br><span class="line"><span class="comment">#advertised.listeners=PLAINTEXT://your.host.name:9092</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">num.network.threads</span>=<span class="string">3</span></span><br><span class="line"></span><br><span class="line"><span class="meta">socket.send.buffer.bytes</span>=<span class="string">102400</span></span><br><span class="line"></span><br><span class="line"><span class="meta">socket.request.max.bytes</span>=<span class="string">104857600</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">############################# Log Basics #############################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># A comma separated list of directories under which to store log files</span></span><br><span class="line"><span class="meta">log.dirs</span>=<span class="string">/Users/majiju/develop-tool/Kafka/Kafka1/logs</span></span><br><span class="line"><span class="meta">num.partitions</span>=<span class="string">1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">offsets.topic.replication.factor</span>=<span class="string">1</span></span><br><span class="line"><span class="meta">transaction.state.log.replication.factor</span>=<span class="string">1</span></span><br><span class="line"><span class="meta">transaction.state.log.min.isr</span>=<span class="string">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############################# Log Flush Policy #############################</span></span><br><span class="line"><span class="comment"># There are a few important trade-offs here:</span></span><br><span class="line"><span class="comment">#    1. Durability: Unflushed data may be lost if you are not using replication.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># The number of messages to accept before forcing a flush of data to disk</span></span><br><span class="line"><span class="comment"># The maximum amount of time a message can sit in a log before we force a flush</span></span><br><span class="line"><span class="comment">#log.flush.interval.ms=1000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># from the end of the log.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># The minimum age of a log file to be eligible for deletion due to age</span></span><br><span class="line"><span class="meta">log.retention.hours</span>=<span class="string">168</span></span><br><span class="line"></span><br><span class="line"><span class="meta">log.segment.bytes</span>=<span class="string">1073741824</span></span><br><span class="line"><span class="comment"># Zookeeper connection string (see zookeeper docs for details).</span></span><br><span class="line"><span class="comment"># This is a comma separated host:port pairs, each corresponding to a zk</span></span><br><span class="line"><span class="comment"># server. e.g. &quot;127.0.0.1:3000,127.0.0.1:3001,127.0.0.1:3002&quot;.</span></span><br><span class="line"><span class="comment"># You can also append an optional chroot string to the urls to specify the</span></span><br><span class="line"><span class="comment"># root directory for all kafka znodes.</span></span><br><span class="line"><span class="meta">zookeeper.connect</span>=<span class="string">localhost:12181</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Timeout in ms for connecting to zookeeper</span></span><br><span class="line"><span class="meta">zookeeper.connection.timeout.ms</span>=<span class="string">18000</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">############################# Group Coordinator Settings #############################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># The following configuration specifies the time, in milliseconds, that the GroupCoordinator will delay the initial consumer rebalance.</span></span><br><span class="line"><span class="comment"># The rebalance will be further delayed by the value of group.initial.rebalance.delay.ms as new members join the group, up to a maximum of max.poll.interval.ms.</span></span><br><span class="line"><span class="comment"># The default value for this is 3 seconds.</span></span><br><span class="line"><span class="comment"># We override this to 0 here as it makes for a better out-of-the-box experience for development and testing.</span></span><br><span class="line"><span class="comment"># However, in production environments the default value of 3 seconds is more suitable as this will help to avoid unnecessary, and potentially expensive, rebalances during application startup.</span></span><br><span class="line"><span class="meta">group.initial.rebalance.delay.ms</span>=<span class="string">0</span></span><br></pre></td></tr></table></figure>
+
+<p>我们来一个个的读配置文件中蓝色字体的注释</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>broker.id</td>
+<td>当前节点的id，集群中唯一</td>
+</tr>
+<tr>
+<td>listeners=PLAINTEXT://localhost:9092</td>
+<td>监听地址和端口，producter、consumer连接的端口，默认9092</td>
+</tr>
+<tr>
+<td>num.network.threads=3</td>
+<td>broker处理消息的最大线程数，一般情况下数量为cpu核数</td>
+</tr>
+<tr>
+<td>socket.send.buffer.bytes=102400</td>
+<td>socket的发送缓冲区</td>
+</tr>
+<tr>
+<td>socket.request.max.bytes=104857600</td>
+<td>socket请求的最大字节数</td>
+</tr>
+<tr>
+<td>log.dirs</td>
+<td>日志的目录</td>
+</tr>
+<tr>
+<td>num.partitions</td>
+<td>每个topic分区的个数</td>
+</tr>
+<tr>
+<td>offsets.topic.replication.factor</td>
+<td>副本个数</td>
+</tr>
+<tr>
+<td>transaction.state.log.replication.factor</td>
+<td></td>
+</tr>
+<tr>
+<td>transaction.state.log.min.isr</td>
+<td></td>
+</tr>
+<tr>
+<td>log.retention.hours=168</td>
+<td>日志保留的最长的时长，默认为7天</td>
+</tr>
+<tr>
+<td>log.segment.bytes</td>
+<td>每个segment的大小</td>
+</tr>
+<tr>
+<td>zookeeper.connect</td>
+<td>zk的连接地址</td>
+</tr>
+<tr>
+<td>zookeeper.connection.timeout.ms</td>
+<td>zk连接超时时间</td>
+</tr>
+<tr>
+<td>group.initial.rebalance.delay.ms</td>
+<td>消费者分组协调者</td>
+</tr>
+</tbody></table>
+<p>producer.properties</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Licensed to the Apache Software Foundation (ASF) under one or more</span></span><br><span class="line"><span class="comment"># contributor license agreements.  See the NOTICE file distributed with</span></span><br><span class="line"><span class="comment"># this work for additional information regarding copyright ownership.</span></span><br><span class="line"><span class="comment"># The ASF licenses this file to You under the Apache License, Version 2.0</span></span><br><span class="line"><span class="comment"># (the &quot;License&quot;); you may not use this file except in compliance with</span></span><br><span class="line"><span class="comment"># the License.  You may obtain a copy of the License at</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#    http://www.apache.org/licenses/LICENSE-2.0</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Unless required by applicable law or agreed to in writing, software</span></span><br><span class="line"><span class="comment"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></span><br><span class="line"><span class="comment"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></span><br><span class="line"><span class="comment"># See the License for the specific language governing permissions and</span></span><br><span class="line"><span class="comment"># limitations under the License.</span></span><br><span class="line"><span class="comment"># see org.apache.kafka.clients.producer.ProducerConfig for more details</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############################# Producer Basics #############################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># list of brokers used for bootstrapping knowledge about the rest of the cluster</span></span><br><span class="line"><span class="comment"># format: host1:port1,host2:port2 ...</span></span><br><span class="line"><span class="meta">bootstrap.servers</span>=<span class="string">localhost:9092</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># specify the compression codec for all data generated: none, gzip, snappy, lz4, zstd</span></span><br><span class="line"><span class="meta">compression.type</span>=<span class="string">none</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># name of the partitioner class for partitioning events; default partition spreads data randomly</span></span><br><span class="line"><span class="comment">#partitioner.class=</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># the maximum amount of time the client will wait for the response of a request</span></span><br><span class="line"><span class="comment">#request.timeout.ms=</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># how long `KafkaProducer.send` and `KafkaProducer.partitionsFor` will block for</span></span><br><span class="line"><span class="comment">#max.block.ms=</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># the producer will wait for up to the given delay to allow other records to be sent so that the sends can be batched together</span></span><br><span class="line"><span class="comment">#linger.ms=</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># the maximum size of a request in bytes</span></span><br><span class="line"><span class="comment">#max.request.size=</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># the default batch size in bytes when batching multiple records sent to a partition</span></span><br><span class="line"><span class="comment">#batch.size=</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># the total bytes of memory the producer can use to buffer records waiting to be sent to the server</span></span><br><span class="line"><span class="comment">#buffer.memory=</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>bootstrap.servers</td>
+<td>kafka集群列表，用于获取metadata，不必全部指定，多个用”,”分开</td>
+</tr>
+<tr>
+<td>compression.type</td>
+<td>压缩类型  none，gzip，snappy，lz4，zstd</td>
+</tr>
+<tr>
+<td>partitioner.class</td>
+<td>分区策略，默认是随机分区</td>
+</tr>
+<tr>
+<td>request.timeout.ms</td>
+<td>客户端等待请求响应的最大超时时间</td>
+</tr>
+<tr>
+<td>max.block.ms</td>
+<td>最大的阻塞时长</td>
+</tr>
+<tr>
+<td>linger.ms</td>
+<td>生产者将等待到给定的延迟，以允许其他记录被发送，以便发送可以批处理在一起</td>
+</tr>
+<tr>
+<td>max.request.size</td>
+<td>最大的请求字节数</td>
+</tr>
+<tr>
+<td>batch.size</td>
+<td>批处理的最大数</td>
+</tr>
+<tr>
+<td>buffer.memory</td>
+<td>生产者能够使用的最大空间 （一起发送给server）</td>
+</tr>
+</tbody></table>
+<p>consumer.properties</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Licensed to the Apache Software Foundation (ASF) under one or more</span></span><br><span class="line"><span class="comment"># contributor license agreements.  See the NOTICE file distributed with</span></span><br><span class="line"><span class="comment"># this work for additional information regarding copyright ownership.</span></span><br><span class="line"><span class="comment"># The ASF licenses this file to You under the Apache License, Version 2.0</span></span><br><span class="line"><span class="comment"># (the &quot;License&quot;); you may not use this file except in compliance with</span></span><br><span class="line"><span class="comment"># the License.  You may obtain a copy of the License at</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#    http://www.apache.org/licenses/LICENSE-2.0</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Unless required by applicable law or agreed to in writing, software</span></span><br><span class="line"><span class="comment"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></span><br><span class="line"><span class="comment"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></span><br><span class="line"><span class="comment"># See the License for the specific language governing permissions and</span></span><br><span class="line"><span class="comment"># limitations under the License.</span></span><br><span class="line"><span class="comment"># see org.apache.kafka.clients.consumer.ConsumerConfig for more details</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># list of brokers used for bootstrapping knowledge about the rest of the cluster</span></span><br><span class="line"><span class="comment"># format: host1:port1,host2:port2 ...</span></span><br><span class="line"><span class="meta">bootstrap.servers</span>=<span class="string">localhost:9092</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># consumer group id</span></span><br><span class="line"><span class="meta">group.id</span>=<span class="string">test-consumer-group</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># What to do when there is no initial offset in Kafka or if the current</span></span><br><span class="line"><span class="comment"># offset does not exist any more on the server: latest, earliest, none</span></span><br><span class="line"><span class="comment">#auto.offset.reset=</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>bootstrap.servers</td>
+<td>连接的server的地址</td>
+</tr>
+<tr>
+<td>group.id</td>
+<td>分组id</td>
+</tr>
+</tbody></table>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Kafka的安装与使用</p><p><a href="https://mrhy1996.github.io/kafka-install/">https://mrhy1996.github.io/kafka-install/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>mrhy</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-05-10</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-05-10</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/kafka/">kafka</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/maven-archetype/"><span class="level-item">maven快速生成项目的脚手架</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script>new Valine({
+            el: '#valine-thread' ,
+            appId: "qqrezpoLCiXy7GuUQlTP2NPv-gzGzoHsz",
+            appKey: "KzzUdvfOAtTpDcAF5mv9nQsm",
+            placeholder: "有什么话想对我说，写下来吧~",
+            avatar: "mm",
+            
+            meta: ["nick","mail","link"],
+            pageSize: 10,
+            lang: "zh-CN",
+            
+            highlight: true,
+            
+            
+            
+            
+            
+            requiredFields: [],
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-05-10T07:00:52.000Z">2021-05-10</time></p><p class="title"><a href="/kafka-install/">Kafka的安装与使用</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-05-08T03:41:32.000Z">2021-05-08</time></p><p class="title"><a href="/maven-archetype/">maven快速生成项目的脚手架</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-05-08T02:05:25.000Z">2021-05-08</time></p><p class="title"><a href="/jvm-model/">java内存区域与内存溢出异常</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-05-08T01:41:28.000Z">2021-05-08</time></p><p class="title"><a href="/jvm-good/">jvm常用的参数含义以及调优</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-05-07T13:37:13.000Z">2021-05-07</time></p><p class="title"><a href="/flink/">flink的简介及安装</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">五月 2021</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/04/"><span class="level-start"><span class="level-item">四月 2021</span></span><span class="level-end"><span class="level-item tag">19</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/10/"><span class="level-start"><span class="level-item">十月 2020</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/clickhouse/"><span class="tag">clickhouse</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/docker/"><span class="tag">docker</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/flink/"><span class="tag">flink</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/java/"><span class="tag">java</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/jvm/"><span class="tag">jvm</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kafka/"><span class="tag">kafka</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/mysql/"><span class="tag">mysql</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/spring/"><span class="tag">spring</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%89%91%E6%8C%87offer/"><span class="tag">剑指offer</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"><span class="tag">大数据</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%BA%90%E7%A0%81/"><span class="tag">源码</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><span class="tag">设计模式</span><span class="tag">5</span></a></div></div></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="https://octodex.github.com/images/daftpunktocat-thomas.gif" alt="mrhy1996"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">mrhy1996</p><p class="is-size-6 is-block">立志登山揽月</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 · 上海</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">29</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">12</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Mrhy1996/" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Mrhy1996"><i class="fab fa-github"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#什么是Kafka"><span class="level-left"><span class="level-item">1</span><span class="level-item">什么是Kafka</span></span></a></li><li><a class="level is-mobile" href="#Kafka中的术语和概念"><span class="level-left"><span class="level-item">2</span><span class="level-item">Kafka中的术语和概念</span></span></a></li><li><a class="level is-mobile" href="#安装单机版kafka"><span class="level-left"><span class="level-item">3</span><span class="level-item">安装单机版kafka</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#下载并解压Kafka"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">下载并解压Kafka</span></span></a></li><li><a class="level is-mobile" href="#开启kafka环境"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">开启kafka环境</span></span></a></li><li><a class="level is-mobile" href="#测试"><span class="level-left"><span class="level-item">3.3</span><span class="level-item">测试</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Kafka配置文件详解"><span class="level-left"><span class="level-item">4</span><span class="level-item">Kafka配置文件详解</span></span></a></li></ul></div></div><script src="/js/toc.js" defer></script></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="mrhy&#039;s blogs" height="28"></a><p class="is-size-7"><span>&copy; 2021 mrhy</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
