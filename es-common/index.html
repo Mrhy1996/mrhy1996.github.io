@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>es基础 - mrhy&#039;s blogs</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="mrhy&#039;s blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="mrhy&#039;s blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="今天开始学习es，先花费一天的时间了解es的基本，剩下的慢慢去弥补知识点。"><meta property="og:type" content="blog"><meta property="og:title" content="es基础"><meta property="og:url" content="https://mrhy1996.github.io/es-common/"><meta property="og:site_name" content="mrhy&#039;s blogs"><meta property="og:description" content="今天开始学习es，先花费一天的时间了解es的基本，剩下的慢慢去弥补知识点。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210821141631259.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210821144217572.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210821145906126.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210821214839146.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210821221122883.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822100440935.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822100658333.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822101652303.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822101713575.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822101846224.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822102538583.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822102936615.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822103736355.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822103822810.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822104444923.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822104651428.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822105856178.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822105923608.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822155132550.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822155208725.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822155311426.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822155358802.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822160450217.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822161414986.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822161756167.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822162003297.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822162138892.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822162755137.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822163120425.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822163616279.png"><meta property="og:image" content="https://mrhy1996.github.io/es-common/image-20210822165849651.png"><meta property="article:published_time" content="2021-08-21T00:51:16.000Z"><meta property="article:modified_time" content="2021-08-22T11:09:02.408Z"><meta property="article:author" content="mrhy"><meta property="article:tag" content="es"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/es-common/image-20210821141631259.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://mrhy1996.github.io/es-common/"},"headline":"mrhy's blogs","image":["https://mrhy1996.github.io/es-common/image-20210821141631259.png","https://mrhy1996.github.io/es-common/image-20210821144217572.png","https://mrhy1996.github.io/es-common/image-20210821145906126.png","https://mrhy1996.github.io/es-common/image-20210821214839146.png","https://mrhy1996.github.io/es-common/image-20210821221122883.png","https://mrhy1996.github.io/es-common/image-20210822100440935.png","https://mrhy1996.github.io/es-common/image-20210822100658333.png","https://mrhy1996.github.io/es-common/image-20210822101652303.png","https://mrhy1996.github.io/es-common/image-20210822101713575.png","https://mrhy1996.github.io/es-common/image-20210822101846224.png","https://mrhy1996.github.io/es-common/image-20210822102538583.png","https://mrhy1996.github.io/es-common/image-20210822102936615.png","https://mrhy1996.github.io/es-common/image-20210822103736355.png","https://mrhy1996.github.io/es-common/image-20210822103822810.png","https://mrhy1996.github.io/es-common/image-20210822104444923.png","https://mrhy1996.github.io/es-common/image-20210822104651428.png","https://mrhy1996.github.io/es-common/image-20210822105856178.png","https://mrhy1996.github.io/es-common/image-20210822105923608.png","https://mrhy1996.github.io/es-common/image-20210822155132550.png","https://mrhy1996.github.io/es-common/image-20210822155208725.png","https://mrhy1996.github.io/es-common/image-20210822155311426.png","https://mrhy1996.github.io/es-common/image-20210822155358802.png","https://mrhy1996.github.io/es-common/image-20210822160450217.png","https://mrhy1996.github.io/es-common/image-20210822161414986.png","https://mrhy1996.github.io/es-common/image-20210822161756167.png","https://mrhy1996.github.io/es-common/image-20210822162003297.png","https://mrhy1996.github.io/es-common/image-20210822162138892.png","https://mrhy1996.github.io/es-common/image-20210822162755137.png","https://mrhy1996.github.io/es-common/image-20210822163120425.png","https://mrhy1996.github.io/es-common/image-20210822163616279.png","https://mrhy1996.github.io/es-common/image-20210822165849651.png"],"datePublished":"2021-08-21T00:51:16.000Z","dateModified":"2021-08-22T11:09:02.408Z","author":{"@type":"Person","name":"mrhy"},"description":"今天开始学习es，先花费一天的时间了解es的基本，剩下的慢慢去弥补知识点。"}</script><link rel="canonical" href="https://mrhy1996.github.io/es-common/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="mrhy&#039;s blogs" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Mrhy1996/"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-08-21T00:51:16.000Z" title="2021/8/21 上午8:51:16">2021-08-21</time>发表</span><span class="level-item"><time dateTime="2021-08-22T11:09:02.408Z" title="2021/8/22 下午7:09:02">2021-08-22</time>更新</span><span class="level-item">25 分钟读完 (大约3716个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">es基础</h1><div class="content"><p>今天开始学习es，先花费一天的时间了解es的基本，剩下的慢慢去弥补知识点。</p>
+<span id="more"></span>
+
+<blockquote>
+<p>es的技术主要跟着狂神说学习的，推荐一波。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV17a4y1x7zq?p=2&amp;spm_id_from=pageDriver">https://www.bilibili.com/video/BV17a4y1x7zq?p=2&amp;spm_id_from=pageDriver</a></p>
+<blockquote>
+<p>ES干什么的</p>
+</blockquote>
+<p>两个字：搜索</p>
+<h1 id="聊一个人"><a href="#聊一个人" class="headerlink" title="聊一个人"></a>聊一个人</h1><h2 id="聊聊Doug-Cutting"><a href="#聊聊Doug-Cutting" class="headerlink" title="聊聊Doug Cutting"></a>聊聊Doug Cutting</h2><p>生活中，可能所有人都间接用过他的作品，他是Lucene、Nutch 、Hadoop等项目的发起人。是他，把高深莫测的搜索技术形成产品，贡献给普罗大众；还是他，打造了目前在云计算和大数据领域里如日中天的Hadoop。他是某种意义上的盗火者，他就是Doug Cutting。</p>
+<p><strong>从实习生做起</strong></p>
+<p>1985年，Cutting毕业于美国斯坦福大学。他并不是一开始就决心投身IT行业的，在大学时代的头两年，Cutting学习了诸如物理、地理等常规课程。因为学费的压力，Cutting开始意识到，自己必须学习一些更加实用、有趣的技能。这样，一方面可以帮助自己还清贷款，另一方面，也是为自己未来的生活做打算。因为斯坦福大学座落在IT行业的“圣地”硅谷，所以学习软件对年轻人来说是再自然不过的事情了。</p>
+<p>Cutting的第一份工作是在Xerox做实习生，Xerox当时的激光扫描仪上运行着三个不同的操作系统，其中的一个操作系统还没有屏幕保护程序。因此，Cutting就开始为这套系统开发屏幕保护程序。由于这套程序是基于系统底层开发的，所以 其他同事可以给这个程序添加不同的主题。这份工作给了Cutting一定的满足感，也是他最早的“平台”级的作品。</p>
+<p>可以说，Xerox对 Cutting后来研究搜索技术起到了决定性的影响，除了短暂的在苏格兰工作的经历外，Cutting事业的起步阶段大部分都是在Xerox度过的，这段 时间让他在搜索技术的知识上有了很大提高。他花了四年的时间搞研发，这四年中，他阅读了大量的论文，同时，自己也发表了很多论文，用Cutting自己的 话说——“我的研究生是在Xerox读的。”</p>
+<p>尽管Xerox让Cutting积累了不少技术知识，但他却认为，自己当时搞的这些研究只是纸 上谈兵，没有人试验过这些理论的可实践性。于是，他决定勇敢地迈出这一步，让搜索技术可以为更多人所用。1997年底，Cutting开始以每周两天的时间投入，在家里试着用Java把这个想法变成现实，不久之后，Lucene诞生了。作为第一个提供全文文本搜索的开源函数库，Lucene的伟大自不必多言。</p>
+<p><strong>Hadoop的诞生</strong></p>
+<p>之后，Cutting再接再厉，在 Lucene的基础上将开源的思想继续深化。2004年，Cutting和同为程序员出身的Mike Cafarella决定开发一款可以代替当时的主流搜索产品的开源搜索引擎，这个项目被命名为Nutch。在此之前，Cutting所在的公司 Architext（其主要产品为Excite搜索引擎）因没有顶住互联网经济泡沫的冲击而破产，那时的Cutting正处在Freelancer的生涯 中，所以他希望自己的项目能通过一种低开销的方式来构建网页中的大量算法。幸运的是，Google这时正好发布了一项研究报告，报告中介绍了两款 Google为支持自家的搜索引擎而开发的软件平台。这两个平台一个是GFS（Google File System），用于存储不同设备所产生的海量数据；另一个是MapReduce，它运行在GFS之上，负责分布式大规模数据。基于这两个平台，Cutting最引人瞩目的作品——Hadoop诞生了。谈到Google对他们的“帮助”，Cutting说：“我们开始设想用4~5台电脑来实现 这个项目，但在实际运行中牵涉了大量繁琐的步骤需要靠人工来完成。Google的平台让这些步骤得以自动化，为我们实现整体框架打下了良好的基础。”</p>
+<p>说起Google，Cutting也是它成长的见证人之一，这里有一段鲜为人知的故事。早在Cutting供职于Architext期间，有两个年轻人曾去拜访这家公司，并向他们兜售自己的搜索技术，但当时他们的Demo只检索出几百万条网页，Excite的工程师们觉得他们的技术太小儿科，于是就在心里鄙 视一番，把他们给送走了。但故事并未到此结束，这两个年轻人回去之后痛定思痛，决定自己创业。于是，他们开了一家自己的搜索公司，取名为Google。这两个年轻人就是Larry Page和Sergey Brin。在Cutting看来，Google的成功主要取决于，反向排序之后再存储的设计和对自己技术的自信。</p>
+<p><strong>让“开源”影响世界</strong></p>
+<p>出于对时间成本的考虑，在从Architext离职四年后，Cutting决定结束这段Freelancer的生涯，找一家靠谱的公司，进一步完善 Hadoop的性能。他先后面试了几家公司，其中也包括IBM，但IBM似乎对他的早期项目Lucene更感兴趣，至于Hadoop则不置可否。就在此 时，Cutting接受了当时Yahoo!搜索项目负责人Raymie Stata的邀请，于2006年正式加入Yahoo!。在Yahoo!，有一支一百人的团队帮助他完善Hadoop项目，这期间开发工作进行得卓有成效。 不久之后，Yahoo!就宣布，将其旗下的搜索业务的架构迁移到Hadoop上来。两年后，Yahoo!便基于Hadoop启动了第一个应用项目 “webmap”——一个用来计算网页间链接关系的算法。Cutting的时任上司（后为Hortonworks CEO）Eric Baldeschwieler曾说：“在相同的硬件环境下，基于Hadoop的webmap的反应速度是之前系统的33倍。”</p>
+<p>虽然 Hadoop的表现惊艳，但在当时并非所有公司都有条件使用，与此同时，用户需求却在日益增加。有些大公司（如银行、电信公司、大型零售商等）只关注于产品，却不想在技术工程和咨询服务上过多投入，它们需要一个可以帮助其解决问题的平台，这就是Cutting后来跳槽到Cloudera的初衷。从某种程度上说，Cloudera就是这么一个为那些在咨询和技术上有需求的公司提供服务的平台。它的客户大多来自于传统行业，希望通过Hadoop来处理之前只能 被直接抛弃的大规模数据。现在，除了这些传统行业之外，Yahoo!、Facebook、eBay、LinkedIn等公司都在使用Hadoop，用 Cutting的话说，他们的团队被“无形之中扩大了”。</p>
+<p>目前，Cutting的目标是把Hadoop发展成云计算领域的RedHat。 “我从来没有想过，除了搜索引擎，Hadoop的作用还能在其他方面有所发挥，它今天所受到的关注程度，已超过了我之前的所有想象”。谈到成功，Cutting认为他的成功主要归功于两点，一是对自己工作的热情（Cutting在大学时就开始做Infrastracture类的程序，还用 Lisp为Emacs贡献过代码，他非常喜欢自己的程序被千万人使用的感觉）；二是目标不要定得过大，要踏踏实实，一步一个脚印。</p>
+<p>文章参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_34060741/article/details/85610704?utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-1.control&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-1.control">https://blog.csdn.net/weixin_34060741/article/details/85610704?utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control</a></p>
+<h1 id="ES的简介"><a href="#ES的简介" class="headerlink" title="ES的简介"></a>ES的简介</h1><p><em><strong>You know, for search (and analysis)</strong></em></p>
+<img src="/es-common/image-20210821141631259.png" class="" title="image-20210821141631259">
+
+
+
+<h1 id="货比三家"><a href="#货比三家" class="headerlink" title="货比三家"></a>货比三家</h1><h1 id="安装ES"><a href="#安装ES" class="headerlink" title="安装ES"></a>安装ES</h1><blockquote>
+<p>声明：JDK1.8 最低要求</p>
+</blockquote>
+<p>下载：<a target="_blank" rel="noopener" href="https://www.elastic.co/cn/downloads/elasticsearch">https://www.elastic.co/cn/downloads/elasticsearch</a></p>
+<img src="/es-common/image-20210821144217572.png" class="" title="image-20210821144217572">
+
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">➜  elasticsearch-7.14.0 ll</span><br><span class="line">total 1224</span><br><span class="line">-rw-r--r--@  1 cooper  staff   3.8K  7 30 04:47 LICENSE.txt</span><br><span class="line">-rw-r--r--@  1 cooper  staff   601K  7 30 04:51 NOTICE.txt</span><br><span class="line">-rw-r--r--@  1 cooper  staff   2.6K  7 30 04:47 README.asciidoc</span><br><span class="line">drwxr-xr-x@ 25 cooper  staff   800B  7 30 04:54 bin</span><br><span class="line">drwxr-xr-x@ 11 cooper  staff   352B  8 20 22:06 config</span><br><span class="line">drwxr-xr-x   3 cooper  staff    96B  8 20 22:06 data</span><br><span class="line">drwxr-xr-x@  3 cooper  staff    96B  7 30 04:54 jdk.app</span><br><span class="line">drwxr-xr-x@ 42 cooper  staff   1.3K  7 30 04:54 lib</span><br><span class="line">drwxr-xr-x@ 15 cooper  staff   480B  8 21 00:00 logs</span><br><span class="line">drwxr-xr-x@ 59 cooper  staff   1.8K  7 30 04:55 modules</span><br><span class="line">drwxr-xr-x@  2 cooper  staff    64B  7 30 04:51 plugins</span><br></pre></td></tr></table></figure>
+
+<h3 id="bin"><a href="#bin" class="headerlink" title="bin"></a>bin</h3><p>启动脚本、停止脚本</p>
+<h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><img src="/es-common/image-20210821145906126.png" class="" title="image-20210821145906126">
+
+<h3 id="lib"><a href="#lib" class="headerlink" title="lib"></a>lib</h3><p>包</p>
+<h3 id="modules"><a href="#modules" class="headerlink" title="modules"></a>modules</h3><p>模块</p>
+<h3 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a>plugins</h3><p>插件包</p>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bin/elasticsearch</span><br></pre></td></tr></table></figure>
+
+<h2 id="ES的可视化程序head安装"><a href="#ES的可视化程序head安装" class="headerlink" title="ES的可视化程序head安装"></a>ES的可视化程序head安装</h2><h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a target="_blank" rel="noopener" href="https://github.com/mobz/elasticsearch-head">https://github.com/mobz/elasticsearch-head</a></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install</span><br><span class="line"></span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
+
+<h3 id="连接es"><a href="#连接es" class="headerlink" title="连接es"></a>连接es</h3><p>打开网址localhost:9100,连接es</p>
+<img src="/es-common/image-20210821214839146.png" class="" title="image-20210821214839146">
+
+<p>点击连接，第一次连接的时候有跨域问题，需要去es中解决跨域问题</p>
+<h3 id="解决跨域问题"><a href="#解决跨域问题" class="headerlink" title="解决跨域问题"></a>解决跨域问题</h3><p>去es的config目录下修改配置文件，修改elasticsearch.yml</p>
+<p>添加配置项</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">http.cors.enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">http.cors.allow-origin:</span> <span class="string">&#x27;*&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>重新启动es</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bin/elasticsearch</span><br></pre></td></tr></table></figure>
+
+<p>点击连接，跨域问题解决</p>
+<h1 id="安装kibana"><a href="#安装kibana" class="headerlink" title="安装kibana"></a>安装kibana</h1><h2 id="kibana是什么"><a href="#kibana是什么" class="headerlink" title="kibana是什么"></a>kibana是什么</h2><p>Kibana 是一款免费开源的前端应用程序，其基础是 Elastic Stack，可以为 Elasticsearch 中索引的数据提供搜索和数据可视化功能。尽管人们通常将 Kibana 视作 Elastic Stack（之前称作 ELK Stack，分别表示 Elasticsearch、Logstash 和 Kibana）的制图工具，但也可将 Kibana 作为用户界面来监测和管理 Elastic Stack 集群并确保集群安全性，还可将其作为基于 Elastic Stack 所开发内置解决方案的汇集中心。Elasticsearch 社区于 2013 年开发出了 Kibana，现在 Kibana 已发展成为 Elastic Stack 的窗口，是用户和公司的一个门户。</p>
+<h2 id="Kibana用途"><a href="#Kibana用途" class="headerlink" title="Kibana用途"></a>Kibana用途</h2><p>Kibana 与 Elasticsearch 和更广意义上的 Elastic Stack 紧密集成，这一点使其成为支持下列场景的理想之选：</p>
+<ol>
+<li>搜索、查看并可视化 Elasticsearch 中所索引的数据，并通过创建柱状图、饼状图、表格、直方图和地图对数据进行分析。仪表板视图能将这些可视化元素集中到一起，然后通过浏览器加以分享，以提供有关海量数据的实时分析视图，为下列用例提供支持：<ol>
+<li>日志处理和分析</li>
+<li>基础设施指标和容器监测</li>
+<li>应用程序性能监测 (APM)</li>
+<li>地理空间数据分析和可视化</li>
+<li>安全分析</li>
+<li>业务分析</li>
+</ol>
+</li>
+<li>借助网络界面来监测和管理 Elastic Stack 实例并确保实例的安全。</li>
+<li>针对基于 Elastic Stack 开发的内置解决方案（面向可观测性、安全和企业搜索应用程序），将其访问权限集中到一起。</li>
+</ol>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a target="_blank" rel="noopener" href="https://www.elastic.co/cn/downloads/kibana">https://www.elastic.co/cn/downloads/kibana</a></p>
+<img src="/es-common/image-20210821221122883.png" class="" title="image-20210821221122883">
+
+<h2 id="配置汉化"><a href="#配置汉化" class="headerlink" title="配置汉化"></a>配置汉化</h2><p>去config目录下，修改kibana.yml</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#i18n.locale: &quot;en&quot;</span></span><br><span class="line"><span class="attr">i18n.locale:</span> <span class="string">&quot;zh-CN&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="启动-1"><a href="#启动-1" class="headerlink" title="启动"></a>启动</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bin/kibana</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="ES核心概念"><a href="#ES核心概念" class="headerlink" title="ES核心概念"></a>ES核心概念</h1><blockquote>
+<p>Es是面向文档的,关系型数据库和elasticsearch客观的对比，一切都是json！</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Relation DB</th>
+<th>ElasticSearch</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数据库</td>
+<td>索引（indices）</td>
+</tr>
+<tr>
+<td>表</td>
+<td>types</td>
+</tr>
+<tr>
+<td>行</td>
+<td>documents</td>
+</tr>
+<tr>
+<td>字段</td>
+<td>fields</td>
+</tr>
+</tbody></table>
+<p>物理设计：</p>
+<p>elasticSearch在后台把每个索引分成多个分片，每个分片</p>
+<h2 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h2><h2 id="节点"><a href="#节点" class="headerlink" title="节点"></a>节点</h2><h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>库</p>
+<h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><p>7.x 逐渐废弃</p>
+<h2 id="文档（documents）"><a href="#文档（documents）" class="headerlink" title="文档（documents）"></a>文档（documents）</h2><h2 id="分片（shard）"><a href="#分片（shard）" class="headerlink" title="分片（shard）"></a>分片（shard）</h2><h2 id="映射（mapping）"><a href="#映射（mapping）" class="headerlink" title="映射（mapping）"></a>映射（mapping）</h2><p>字段类型</p>
+<h1 id="IK分词器"><a href="#IK分词器" class="headerlink" title="IK分词器"></a>IK分词器</h1><h2 id="什么是IK分词器"><a href="#什么是IK分词器" class="headerlink" title="什么是IK分词器"></a>什么是IK分词器</h2><p>分词:即把一段中文或者别的划分成一个个的关键字,我们在搜索时候会把自己的信息进行分词,会把数据库中或者索引库中的数据进行分词,然后进行一个匹配操作,默认的中文分词器是将每个字看成一个词,比如”我爱技术”会被分为”我”,”爱”,”技”,”术”,这显然不符合要求,所以我们需要安装中文分词器IK来解决这个问题</p>
+<p>IK提供了两个分词算法:ik_smart和ik_max_word</p>
+<p>其中ik_smart为最少切分,ik_max_word为最细粒度划分</p>
+<h2 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h2><p>地址：<a target="_blank" rel="noopener" href="https://github.com/medcl/elasticsearch-analysis-ik/releases">https://github.com/medcl/elasticsearch-analysis-ik/releases</a></p>
+<p>下载完毕，放到elasticSearch下面的插件即可</p>
+<img src="/es-common/image-20210822100440935.png" class="" title="image-20210822100440935">
+
+<h2 id="重启ik"><a href="#重启ik" class="headerlink" title="重启ik"></a>重启ik</h2><img src="/es-common/image-20210822100658333.png" class="" title="image-20210822100658333">
+
+<h2 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h2><p>最少切分</p>
+<img src="/es-common/image-20210822101652303.png" class="" title="image-20210822101652303">
+
+<p>最细粒度切分</p>
+<img src="/es-common/image-20210822101713575.png" class="" title="image-20210822101713575">
+
+<h2 id="实战2"><a href="#实战2" class="headerlink" title="实战2"></a>实战2</h2><img src="/es-common/image-20210822101846224.png" class="" title="image-20210822101846224">
+
+<p>如果想要将姜大合并成一个词，需要==手动配置字典==</p>
+<h2 id="手动配置ik字典"><a href="#手动配置ik字典" class="headerlink" title="手动配置ik字典"></a>手动配置ik字典</h2><p>去ik分词器的config目录下，创建自己的字典</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim new.dic</span><br></pre></td></tr></table></figure>
+
+<p>修改配置文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim IKAnalyzer.cfg.xml</span><br></pre></td></tr></table></figure>
+
+<img src="/es-common/image-20210822102538583.png" class="" title="image-20210822102538583">
+
+<p>重启es</p>
+<h1 id="RestFul操作ES"><a href="#RestFul操作ES" class="headerlink" title="RestFul操作ES"></a>RestFul操作ES</h1><img src="/es-common/image-20210822102936615.png" class="" title="image-20210822102936615">
+
+<h2 id="关于索引的操作"><a href="#关于索引的操作" class="headerlink" title="关于索引的操作"></a>关于索引的操作</h2><ol>
+<li><p>创建（更新）一个索引</p>
+<img src="/es-common/image-20210822103736355.png" class="" title="image-20210822103736355">
+
+<img src="/es-common/image-20210822103822810.png" class="" title="image-20210822103822810"></li>
+<li><p>创建一个索引类型</p>
+<img src="/es-common/image-20210822104444923.png" class="" title="image-20210822104444923"></li>
+<li><p>获取数据、规则</p>
+<img src="/es-common/image-20210822104651428.png" class="" title="image-20210822104651428"></li>
+<li><p>用POST实现修改</p>
+<img src="/es-common/image-20210822105856178.png" class="" title="image-20210822105856178">
+
+<img src="/es-common/image-20210822105923608.png" class="" title="image-20210822105923608"></li>
+<li><p>删除索引</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">DELETE test</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="关于文档的操作"><a href="#关于文档的操作" class="headerlink" title="关于文档的操作"></a>关于文档的操作</h2><h3 id="存放数据"><a href="#存放数据" class="headerlink" title="存放数据"></a>存放数据</h3><img src="/es-common/image-20210822155132550.png" class="" title="image-20210822155132550">
+
+<img src="/es-common/image-20210822155208725.png" class="" title="image-20210822155208725">
+
+<h3 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h3><img src="/es-common/image-20210822155311426.png" class="" title="image-20210822155311426">
+
+<h3 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h3><img src="/es-common/image-20210822155358802.png" class="" title="image-20210822155358802">
+
+<p>version代表着数据更新的次数</p>
+<h3 id="简单搜索"><a href="#简单搜索" class="headerlink" title="简单搜索"></a>简单搜索</h3><img src="/es-common/image-20210822160450217.png" class="" title="image-20210822160450217">
+
+<h3 id="复杂搜索"><a href="#复杂搜索" class="headerlink" title="复杂搜索"></a>复杂搜索</h3><ul>
+<li>构建复杂查询的json</li>
+</ul>
+<img src="/es-common/image-20210822161414986.png" class="" title="image-20210822161414986">
+<ul>
+<li><p>指定要查询的字段</p>
+<img src="/es-common/image-20210822161756167.png" class="" title="image-20210822161756167"></li>
+<li><p>排序用sort</p>
+<img src="/es-common/image-20210822162003297.png" class="" title="image-20210822162003297"></li>
+<li><p>分页</p>
+<img src="/es-common/image-20210822162138892.png" class="" title="image-20210822162138892">
+
+<p>from：从第几个数据开始</p>
+<p>size：返回几条数据</p>
+</li>
+<li><p>多条件查询</p>
+<img src="/es-common/image-20210822162755137.png" class="" title="image-20210822162755137">
+
+<p>must 多条件必须都满足</p>
+<img src="/es-common/image-20210822163120425.png" class="" title="image-20210822163120425"></li>
+</ul>
+<p>should 是or的意思，代表着两个条件满足一个就行</p>
+<img src="/es-common/image-20210822163616279.png" class="" title="image-20210822163616279">
+
+<p>must_not 代表着不匹配</p>
+<h3 id="高亮"><a href="#高亮" class="headerlink" title="高亮"></a>高亮</h3><img src="/es-common/image-20210822165849651.png" class="" title="image-20210822165849651">
+
+
+
+</div><div class="article-licensing box"><div class="licensing-title"><p>es基础</p><p><a href="https://mrhy1996.github.io/es-common/">https://mrhy1996.github.io/es-common/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>mrhy</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-08-21</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-08-22</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/es/">es</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/es-springboot/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">springboot集成es</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/maven/"><span class="level-item">maven知识点</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script>new Valine({
+            el: '#valine-thread' ,
+            appId: "qqrezpoLCiXy7GuUQlTP2NPv-gzGzoHsz",
+            appKey: "KzzUdvfOAtTpDcAF5mv9nQsm",
+            placeholder: "有什么话想对我说，写下来吧~",
+            avatar: "mm",
+            
+            meta: ["nick","mail","link"],
+            pageSize: 10,
+            lang: "zh-CN",
+            
+            highlight: true,
+            
+            
+            
+            
+            
+            requiredFields: [],
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-08-22T11:11:09.000Z">2021-08-22</time></p><p class="title"><a href="/es-springboot/">springboot集成es</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-08-21T00:51:16.000Z">2021-08-21</time></p><p class="title"><a href="/es-common/">es基础</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-08-14T04:02:24.000Z">2021-08-14</time></p><p class="title"><a href="/maven/">maven知识点</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-08-10T09:01:11.000Z">2021-08-10</time></p><p class="title"><a href="/redis-cluster/">redis集群模式</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-08-03T13:52:44.000Z">2021-08-03</time></p><p class="title"><a href="/IO*/">各种IO</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/08/"><span class="level-start"><span class="level-item">八月 2021</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/07/"><span class="level-start"><span class="level-item">七月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/06/"><span class="level-start"><span class="level-item">六月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">五月 2021</span></span><span class="level-end"><span class="level-item tag">13</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/04/"><span class="level-start"><span class="level-item">四月 2021</span></span><span class="level-end"><span class="level-item tag">19</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/10/"><span class="level-start"><span class="level-item">十月 2020</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/clickhouse/"><span class="tag">clickhouse</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/docker/"><span class="tag">docker</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/es/"><span class="tag">es</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/flink/"><span class="tag">flink</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/java/"><span class="tag">java</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/jvm/"><span class="tag">jvm</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kafka/"><span class="tag">kafka</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/linux/"><span class="tag">linux</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/log4j2/"><span class="tag">log4j2</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/mysql/"><span class="tag">mysql</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/redis/"><span class="tag">redis</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/spring/"><span class="tag">spring</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%89%91%E6%8C%87offer/"><span class="tag">剑指offer</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9/"><span class="tag">基础知识点</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"><span class="tag">大数据</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%B7%A5%E5%85%B7/"><span class="tag">工具</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%BA%90%E7%A0%81/"><span class="tag">源码</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98/"><span class="tag">线上问题</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><span class="tag">设计模式</span><span class="tag">5</span></a></div></div></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="https://octodex.github.com/images/daftpunktocat-thomas.gif" alt="mrhy1996"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">mrhy1996</p><p class="is-size-6 is-block">立志登山揽月</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 · 上海</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">44</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">19</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Mrhy1996/" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Mrhy1996"><i class="fab fa-github"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#聊一个人"><span class="level-left"><span class="level-item">1</span><span class="level-item">聊一个人</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#聊聊Doug-Cutting"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">聊聊Doug Cutting</span></span></a></li></ul></li><li><a class="level is-mobile" href="#ES的简介"><span class="level-left"><span class="level-item">2</span><span class="level-item">ES的简介</span></span></a></li><li><a class="level is-mobile" href="#货比三家"><span class="level-left"><span class="level-item">3</span><span class="level-item">货比三家</span></span></a></li><li><a class="level is-mobile" href="#安装ES"><span class="level-left"><span class="level-item">4</span><span class="level-item">安装ES</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#目录结构"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">目录结构</span></span></a></li><li><a class="level is-mobile" href="#启动"><span class="level-left"><span class="level-item">4.2</span><span class="level-item">启动</span></span></a></li><li><a class="level is-mobile" href="#ES的可视化程序head安装"><span class="level-left"><span class="level-item">4.3</span><span class="level-item">ES的可视化程序head安装</span></span></a></li></ul></li><li><a class="level is-mobile" href="#安装kibana"><span class="level-left"><span class="level-item">5</span><span class="level-item">安装kibana</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#kibana是什么"><span class="level-left"><span class="level-item">5.1</span><span class="level-item">kibana是什么</span></span></a></li><li><a class="level is-mobile" href="#Kibana用途"><span class="level-left"><span class="level-item">5.2</span><span class="level-item">Kibana用途</span></span></a></li><li><a class="level is-mobile" href="#下载"><span class="level-left"><span class="level-item">5.3</span><span class="level-item">下载</span></span></a></li><li><a class="level is-mobile" href="#配置汉化"><span class="level-left"><span class="level-item">5.4</span><span class="level-item">配置汉化</span></span></a></li><li><a class="level is-mobile" href="#启动-1"><span class="level-left"><span class="level-item">5.5</span><span class="level-item">启动</span></span></a></li></ul></li><li><a class="level is-mobile" href="#ES核心概念"><span class="level-left"><span class="level-item">6</span><span class="level-item">ES核心概念</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#集群"><span class="level-left"><span class="level-item">6.1</span><span class="level-item">集群</span></span></a></li><li><a class="level is-mobile" href="#节点"><span class="level-left"><span class="level-item">6.2</span><span class="level-item">节点</span></span></a></li><li><a class="level is-mobile" href="#索引"><span class="level-left"><span class="level-item">6.3</span><span class="level-item">索引</span></span></a></li><li><a class="level is-mobile" href="#类型"><span class="level-left"><span class="level-item">6.4</span><span class="level-item">类型</span></span></a></li><li><a class="level is-mobile" href="#文档（documents）"><span class="level-left"><span class="level-item">6.5</span><span class="level-item">文档（documents）</span></span></a></li><li><a class="level is-mobile" href="#分片（shard）"><span class="level-left"><span class="level-item">6.6</span><span class="level-item">分片（shard）</span></span></a></li><li><a class="level is-mobile" href="#映射（mapping）"><span class="level-left"><span class="level-item">6.7</span><span class="level-item">映射（mapping）</span></span></a></li></ul></li><li><a class="level is-mobile" href="#IK分词器"><span class="level-left"><span class="level-item">7</span><span class="level-item">IK分词器</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#什么是IK分词器"><span class="level-left"><span class="level-item">7.1</span><span class="level-item">什么是IK分词器</span></span></a></li><li><a class="level is-mobile" href="#安装-1"><span class="level-left"><span class="level-item">7.2</span><span class="level-item">安装</span></span></a></li><li><a class="level is-mobile" href="#重启ik"><span class="level-left"><span class="level-item">7.3</span><span class="level-item">重启ik</span></span></a></li><li><a class="level is-mobile" href="#实战"><span class="level-left"><span class="level-item">7.4</span><span class="level-item">实战</span></span></a></li><li><a class="level is-mobile" href="#实战2"><span class="level-left"><span class="level-item">7.5</span><span class="level-item">实战2</span></span></a></li><li><a class="level is-mobile" href="#手动配置ik字典"><span class="level-left"><span class="level-item">7.6</span><span class="level-item">手动配置ik字典</span></span></a></li></ul></li><li><a class="level is-mobile" href="#RestFul操作ES"><span class="level-left"><span class="level-item">8</span><span class="level-item">RestFul操作ES</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#关于索引的操作"><span class="level-left"><span class="level-item">8.1</span><span class="level-item">关于索引的操作</span></span></a></li><li><a class="level is-mobile" href="#关于文档的操作"><span class="level-left"><span class="level-item">8.2</span><span class="level-item">关于文档的操作</span></span></a></li></ul></li></ul></div></div><script src="/js/toc.js" defer></script></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="mrhy&#039;s blogs" height="28"></a><p class="is-size-7"><span>&copy; 2021 mrhy</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
