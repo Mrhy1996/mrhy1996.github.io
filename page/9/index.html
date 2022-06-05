@@ -1,102 +1,247 @@
 <!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>mrhy&#039;s blogs</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="mrhy&#039;s blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="mrhy&#039;s blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="mrhy的博客"><meta property="og:type" content="blog"><meta property="og:title" content="mrhy&#039;s blogs"><meta property="og:url" content="https://mrhy1996.github.io/"><meta property="og:site_name" content="mrhy&#039;s blogs"><meta property="og:description" content="mrhy的博客"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://mrhy1996.github.io/img/og_image.png"><meta property="article:author" content="mrhy"><meta property="article:tag" content="mrhy"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://mrhy1996.github.io"},"headline":"mrhy's blogs","image":["https://mrhy1996.github.io/img/og_image.png"],"author":{"@type":"Person","name":"mrhy"},"description":"mrhy的博客"}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="mrhy&#039;s blogs" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Mrhy1996/"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-01-13T13:28:05.000Z" title="2021/1/13 下午9:28:05">2021-01-13</time>发表</span><span class="level-item"><time dateTime="2021-01-13T13:28:05.000Z" title="2021/1/13 下午9:28:05">2021-01-13</time>更新</span><span class="level-item">几秒读完 (大约0个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/undefined/"> </a></h1><div class="content"></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-01-07T12:59:37.000Z" title="2021/1/7 下午8:59:37">2021-01-07</time>发表</span><span class="level-item"><time dateTime="2021-01-11T13:13:40.000Z" title="2021/1/11 下午9:13:40">2021-01-11</time>更新</span><span class="level-item">2 分钟读完 (大约328个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/undefined/">冒泡排序</a></h1><div class="content"><p>冒泡排序（Bubble Sort），是一种<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/9132">计算机科学</a>领域的较简单的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/5399605">排序算法</a>。</p>
-<p>它重复地走访过要排序的元素列，依次比较两个相邻的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%85%83%E7%B4%A0/9563223">元素</a>，如果顺序（如从大到小、首字母从Z到A）错误就把他们交换过来。走访元素的工作是重复地进行直到没有相邻元素需要交换，也就是说该元素列已经排序完成。</p>
-<p>这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端（升序或降序排列），就如同碳酸饮料中二氧化碳的气泡最终会上浮到顶端一样，故名“冒泡排序”。</p>
-<h2 id="方式一："><a href="#方式一：" class="headerlink" title="方式一："></a>方式一：</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span> arr[])</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span> ; i&lt;arr.length-<span class="number">1</span> ; i++) &#123; </span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span> ; j&lt;arr.length-<span class="number">1</span>-i ; j++) &#123;  </span><br><span class="line">                <span class="keyword">if</span>(arr[j]&gt;arr[j+<span class="number">1</span>]) &#123;</span><br><span class="line">                    <span class="keyword">int</span> temp = arr[j];</span><br><span class="line">                    arr[j]=arr[j+<span class="number">1</span>];</span><br><span class="line">                    arr[j+<span class="number">1</span>]=temp;</span><br><span class="line">            &#125;</span><br><span class="line">            &#125;    </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>mrhy&#039;s blogs</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="mrhy&#039;s blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="mrhy&#039;s blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="mrhy的博客"><meta property="og:type" content="blog"><meta property="og:title" content="mrhy&#039;s blogs"><meta property="og:url" content="https://mrhy1996.github.io/"><meta property="og:site_name" content="mrhy&#039;s blogs"><meta property="og:description" content="mrhy的博客"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://mrhy1996.github.io/img/og_image.png"><meta property="article:author" content="mrhy"><meta property="article:tag" content="mrhy"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://mrhy1996.github.io"},"headline":"mrhy's blogs","image":["https://mrhy1996.github.io/img/og_image.png"],"author":{"@type":"Person","name":"mrhy"},"description":"mrhy的博客"}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="mrhy&#039;s blogs" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Mrhy1996/"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-04-18T14:44:19.000Z" title="2021/4/18 下午10:44:19">2021-04-18</time>发表</span><span class="level-item"><time dateTime="2021-04-22T08:16:34.000Z" title="2021/4/22 下午4:16:34">2021-04-22</time>更新</span><span class="level-item">几秒读完 (大约46个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/java-utils-menu/">java递归生成菜单</a></h1><div class="content"><p>记录java递归生成菜单</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;Menu&gt;menuList=dao.selectMenu();</span><br><span class="line"></span><br><span class="line">List&lt;Menu&gt;newMenu=buildMenuTree(menuList,<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> List&lt;Menu&gt; <span class="title">buildMenuTree</span><span class="params">(List&lt;Menu&gt; menuList, Integer pid)</span> </span>&#123;</span><br><span class="line">        List&lt;Menu&gt; treeList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        menuList.forEach(menu -&gt; &#123;</span><br><span class="line">            <span class="keyword">if</span> (menu.getParentId().equals(pid)) &#123;</span><br><span class="line">                menu.setChildrens(buildMenuTree(menuList, menu.getId()));</span><br><span class="line">                treeList.add(menu);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">return</span> treeList;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-04-15T07:46:44.000Z" title="2021/4/15 下午3:46:44">2021-04-15</time>发表</span><span class="level-item"><time dateTime="2021-04-22T08:19:53.000Z" title="2021/4/22 下午4:19:53">2021-04-22</time>更新</span><span class="level-item">几秒读完 (大约64个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/java-utils-difftime/">java计算两个时间之间相差月份</a></h1><div class="content"><p>记录一下java计算两个时间相差的月份</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Integer <span class="title">getDifMonth</span><span class="params">(Date startDate, Date endDate)</span></span>&#123;</span><br><span class="line">        Calendar start = Calendar.getInstance();</span><br><span class="line">        Calendar end = Calendar.getInstance();</span><br><span class="line">        start.setTime(startDate);</span><br><span class="line">        end.setTime(endDate);</span><br><span class="line">        <span class="keyword">int</span> result = end.get(Calendar.MONTH) - start.get(Calendar.MONTH);</span><br><span class="line">        <span class="keyword">int</span> month = (end.get(Calendar.YEAR) - start.get(Calendar.YEAR)) * <span class="number">12</span>;</span><br><span class="line">        <span class="keyword">return</span> Math.abs(month + result);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<p>3 1 4 2 5</p>
-<p>1 3 4 2 5</p>
-<p>1 3 2 4 5</p>
-<p>。。。</p>
-<p>上述代码会把最大的冒到最后面 </p>
-<h2 id="方式二："><a href="#方式二：" class="headerlink" title="方式二："></a>方式二：</h2><p>此种方式为冒泡法的变形</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">maopao1</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; arr.length; j++) &#123;</span><br><span class="line">              <span class="keyword">if</span>(arr[i]&gt;arr[j]) &#123;</span><br><span class="line">                  <span class="keyword">int</span> temp = arr[i];</span><br><span class="line">                  arr[i]=arr[j];</span><br><span class="line">                  arr[j]=temp;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-04-14T05:49:57.000Z" title="2021/4/14 下午1:49:57">2021-04-14</time>发表</span><span class="level-item"><time dateTime="2021-08-18T14:24:09.769Z" title="2021/8/18 下午10:24:09">2021-08-18</time>更新</span><span class="level-item">28 分钟读完 (大约4132个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/docker-command/">docker基本命令</a></h1><div class="content"><p>本文将介绍一些docker中的命令与目前过程中的一些技巧,这是自己在学习过程中的一些积累，记录下来，方便查询。</p></div><a class="article-more button is-small is-size-7" href="/docker-command/#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-04-14T02:08:26.000Z" title="2021/4/14 上午10:08:26">2021-04-14</time>发表</span><span class="level-item"><time dateTime="2021-04-22T08:16:34.000Z" title="2021/4/22 下午4:16:34">2021-04-22</time>更新</span><span class="level-item">3 分钟读完 (大约438个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/tool-docker-docker-install/">docker简介及安装</a></h1><div class="content"><h2 id="什么是docker"><a href="#什么是docker" class="headerlink" title="什么是docker"></a>什么是docker</h2><p>Docker 是一个开源的应用容器引擎，基于 Go 语言并遵从 Apache2.0 协议开源。</p>
+<p>Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。</p>
+<p>容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低。</p></div><a class="article-more button is-small is-size-7" href="/tool-docker-docker-install/#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-04-14T01:17:48.000Z" title="2021/4/14 上午9:17:48">2021-04-14</time>发表</span><span class="level-item"><time dateTime="2021-05-01T23:26:12.000Z" title="2021/5/2 上午7:26:12">2021-05-02</time>更新</span><span class="level-item">4 分钟读完 (大约559个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/bigdata-hive1/">hive简介及安装</a></h1><div class="content"><p>hive是基于Hadoop的一个数据仓库工具，用来进行数据提取、转化、加载，这是一种可以存储、查询和分析存储在Hadoop中的大规模数据的机制。hive数据仓库工具能将结构化的数据文件映射为一张数据库表，并提供SQL查询功能，能将SQL语句转变成MapReduce任务来执行。Hive的优点是学习成本低，可以通过类似SQL语句实现快速MapReduce统计，使MapReduce变得更加简单，而不必开发专门的MapReduce应用程序。hive十分适合对数据仓库进行统计分析。</p></div><a class="article-more button is-small is-size-7" href="/bigdata-hive1/#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-03-30T05:17:34.000Z" title="2021/3/30 下午1:17:34">2021-03-30</time>发表</span><span class="level-item"><time dateTime="2021-03-30T05:17:34.000Z" title="2021/3/30 下午1:17:34">2021-03-30</time>更新</span><span class="level-item">12 分钟读完 (大约1769个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/undefined/"> </a></h1><div class="content"><h1 id="MySql数据库的知识总结"><a href="#MySql数据库的知识总结" class="headerlink" title="MySql数据库的知识总结"></a>MySql数据库的知识总结</h1><h2 id="1-mysql数据库常用的存储引擎"><a href="#1-mysql数据库常用的存储引擎" class="headerlink" title="1. mysql数据库常用的存储引擎"></a>1. mysql数据库常用的存储引擎</h2><p>MyISAM、InnoDB、MERGE、MEMORY(HEAP)、BDB(BerkeleyDB)、EXAMPLE、FEDERATED、ARCHIVE、CSV、BLACKHOLE。</p>
+<h2 id="2-MyISAM-和InnoDB的区别"><a href="#2-MyISAM-和InnoDB的区别" class="headerlink" title="2. MyISAM 和InnoDB的区别"></a>2. MyISAM 和InnoDB的区别</h2><img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210324102037337.png" alt="image-20210324102037337" style="zoom:50%;" />
 
+<h2 id="3-mysql-的架构图"><a href="#3-mysql-的架构图" class="headerlink" title="3. mysql 的架构图"></a>3. mysql 的架构图</h2><img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210324101741686.png" alt="image-20210324101741686" style="zoom:50%;" />
 
-
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-01-07T12:59:37.000Z" title="2021/1/7 下午8:59:37">2021-01-07</time>发表</span><span class="level-item"><time dateTime="2021-01-11T13:29:13.000Z" title="2021/1/11 下午9:29:13">2021-01-11</time>更新</span><span class="level-item">几秒读完 (大约0个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/undefined/">桶排序</a></h1><div class="content"></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-12-08T13:46:44.000Z" title="2020/12/8 下午9:46:44">2020-12-08</time>发表</span><span class="level-item"><time dateTime="2020-12-08T13:46:44.000Z" title="2020/12/8 下午9:46:44">2020-12-08</time>更新</span><span class="level-item">几秒读完 (大约32个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/undefined/"> </a></h1><div class="content"><h1 id="弗洛伊德算法"><a href="#弗洛伊德算法" class="headerlink" title="弗洛伊德算法"></a>弗洛伊德算法</h1><h2 id="一、目的"><a href="#一、目的" class="headerlink" title="一、目的"></a>一、目的</h2><p>求解任意两点之间的最短距离（权重）（有向图）</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-11-23T09:14:21.000Z" title="2020/11/23 下午5:14:21">2020-11-23</time>发表</span><span class="level-item"><time dateTime="2020-11-23T03:00:00.000Z" title="2020/11/23 上午11:00:00">2020-11-23</time>更新</span><span class="level-item">11 分钟读完 (大约1684个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/undefined/">分治算法</a></h1><div class="content"><h1 id="一、基本概念"><a href="#一、基本概念" class="headerlink" title="一、基本概念"></a><strong>一、基本概念</strong></h1><p>在计算机科学中，分治法是一种很重要的算法。字面上的解释是“分而治之”，就是把一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分成更小的子问题……直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。这个技巧是很多高效算法的基础，如排序算法(快速排序，归并排序)，傅立叶变换(快速傅立叶变换)……</p>
-<p>  任何一个可以用计算机求解的问题所需的计算时间都与其规模有关。问题的规模越小，越容易直接求解，解题所需的计算时间也越少。例如，对于n个元素的排序问题，当n=1时，不需任何计算。n=2时，只要作一次比较即可排好序。n=3时只要作3次比较即可，…。而当n较大时，问题就不那么容易处理了。要想直接解决一个规模较大的问题，有时是相当困难的。</p>
-<h1 id="二、基本思想及策略"><a href="#二、基本思想及策略" class="headerlink" title="二、基本思想及策略"></a><strong>二、基本思想及策略</strong></h1><p>分治法的设计思想是：将一个难以直接解决的大问题，分割成一些规模较小的相同问题，以便各个击破，分而治之。</p>
-<p>分治策略是：对于一个规模为n的问题，若该问题可以容易地解决（比如说规模n较小）则直接解决，否则将其分解为k个规模较小的子问题，这些子问题互相独立且与原问题形式相同，递归地解这些子问题，然后将各子问题的解合并得到原问题的解。这种算法设计策略叫做分治法。</p>
-<h1 id="三、分治法适用的情况"><a href="#三、分治法适用的情况" class="headerlink" title="三、分治法适用的情况"></a><strong>三、分治法适用的情况</strong></h1><p>   分治法所能解决的问题一般具有以下几个特征：</p>
-<ol>
-<li><p>该问题的规模缩小到一定的程度就可以容易地解决</p>
+<p>特点：可插拔式</p>
+<h2 id="4-Mysql-索引"><a href="#4-Mysql-索引" class="headerlink" title="4. Mysql 索引"></a>4. Mysql 索引</h2><h3 id="导致性能下降的原因有"><a href="#导致性能下降的原因有" class="headerlink" title="导致性能下降的原因有"></a>导致性能下降的原因有</h3><ol>
+<li><p>查询磁盘问题  top</p>
 </li>
-<li><p>该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质。</p>
+<li><p>sql写的烂</p>
 </li>
-<li><p>利用该问题分解出的子问题的解可以合并为该问题的解；</p>
+<li><p>索引失效(单值索引、复合索引)</p>
+<p>id name email weixinNumber</p>
+<p>单值索引</p>
+<p>create index idx_user_name on user(name);</p>
+<p>复合索引</p>
+<p>create index idx_user_name_email on user(name,email);</p>
 </li>
-<li><p>该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子子问题。</p>
+<li><p>关联查询太多join（设计缺陷）</p>
+</li>
+<li><p>服务器调优及各个参数设置</p>
 </li>
 </ol>
-<p>第一条特征是绝大多数问题都可以满足的，因为问题的计算复杂性一般是随着问题规模的增加而增加；</p>
-<p><strong>第二条特征是应用分治法的前提</strong>它也是大多数问题可以满足的，此特征反映了递归思想的应用；、</p>
-<p><strong>第三条特征是关键，能否利用分治法完全取决于问题是否具有第三条特征</strong>，如果<strong>具备了第一条和第二条特征，而不具备第三条特征，则可以考虑用贪心法或动态规划法</strong>。</p>
-<p><strong>第四条特征涉及到分治法的效率</strong>，如果各子问题是不独立的则分治法要做许多不必要的工作，重复地解公共的子问题，此时虽然可用分治法，但<strong>一般用动态规划法较好</strong>。</p>
-<h1 id="四、分治法的基本步骤"><a href="#四、分治法的基本步骤" class="headerlink" title="四、分治法的基本步骤"></a><strong>四、分治法的基本步骤</strong></h1><p>分治法在每一层递归上都有三个步骤：</p>
-<p>   step1 分解：将原问题分解为若干个规模较小，相互独立，与原问题形式相同的子问题；</p>
-<p>   step2 解决：若子问题规模较小而容易被解决则直接解，否则递归地解各个子问题</p>
-<p>   step3 合并：将各个子问题的解合并为原问题的解。</p>
-<p>它的一般的算法设计模式如下：</p>
-<p>  Divide-and-Conquer(P)</p>
-<p>  \1. if |P|≤n0</p>
-<p>  \2. then return(ADHOC(P))</p>
-<p>  \3. 将P分解为较小的子问题 P1 ,P2 ,…,Pk</p>
-<p>  \4. for i←1 to k</p>
-<p>  \5. do yi ← Divide-and-Conquer(Pi) △ 递归解决Pi</p>
-<p>  \6. T ← MERGE(y1,y2,…,yk) △ 合并子问题</p>
-<p>  \7. return(T)</p>
-<p>  其中|P|表示问题P的规模；n0为一阈值，表示当问题P的规模不超过n0时，问题已容易直接解出，不必再继续分解。ADHOC(P)是该分治法中的基本子算法，用于直接解小规模的问题P。因此，当P的规模不超过n0时直接用算法ADHOC(P)求解。算法MERGE(y1,y2,…,yk)是该分治法中的合并子算法，用于将P的子问题P1 ,P2 ,…,Pk的相应的解y1,y2,…,yk合并为P的解。</p>
-<h1 id="五、分治法的复杂性分析"><a href="#五、分治法的复杂性分析" class="headerlink" title="五、分治法的复杂性分析"></a><strong>五、分治法的复杂性分析</strong></h1><p>  一个分治法将规模为n的问题分成k个规模为n／m的子问题去解。设分解阀值n0=1，且adhoc解规模为1的问题耗费1个单位时间。再设将原问题分解为k个子问题以及用merge将k个子问题的解合并为原问题的解需用f(n)个单位时间。用T(n)表示该分治法解规模为|P|=n的问题所需的计算时间，则有：</p>
-<p> T（n）= k T(n/m)+f(n)</p>
-<p>  通过迭代法求得方程的解：</p>
-<p>   递归方程及其解只给出n等于m的方幂时T(n)的值，但是如果认为T(n)足够平滑，那么由n等于m的方幂时T(n)的值可以估计T(n)的增长速度。通常假定T(n)是单调上升的，从而当          mi≤n</p>
-<h1 id="六、可使用分治法求解的一些经典问题"><a href="#六、可使用分治法求解的一些经典问题" class="headerlink" title="六、可使用分治法求解的一些经典问题"></a><strong>六、可使用分治法求解的一些经典问题</strong></h1><p> （1）二分搜索</p>
-<p>（2）大整数乘法</p>
-<p> （3）Strassen矩阵乘法</p>
-<p>（4）棋盘覆盖</p>
-<p>（5）合并排序</p>
-<p>（6）快速排序</p>
-<p>（7）线性时间选择</p>
-<p>（8）最接近点对问题</p>
-<p>（9）循环赛日程表</p>
-<p>（10）汉诺塔</p>
-<h1 id="七、依据分治法设计程序时的思维过程"><a href="#七、依据分治法设计程序时的思维过程" class="headerlink" title="七、依据分治法设计程序时的思维过程"></a><strong>七、依据分治法设计程序时的思维过程</strong></h1><p>   <strong>实际上就是类似于数学归纳法，找到解决本问题的求解方程公式，然后根据方程公式设计递归程序。</strong></p>
-<p><strong>1、一定是先找到最小问题规模时的求解方法</strong></p>
-<p><strong>2、然后考虑随着问题规模增大时的求解方法</strong></p>
-<p><strong>3、找到求解的递归函数式后（各种规模或因子），设计递归程序即可。</strong></p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-11-22T12:09:38.000Z" title="2020/11/22 下午8:09:38">2020-11-22</time>发表</span><span class="level-item"><time dateTime="2020-11-22T12:09:38.000Z" title="2020/11/22 下午8:09:38">2020-11-22</time>更新</span><span class="level-item">10 分钟读完 (大约1539个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/undefined/"> </a></h1><div class="content"><h1 id="一、基本概念"><a href="#一、基本概念" class="headerlink" title="一、基本概念"></a>一、基本概念</h1><p>​       所谓贪心算法是指，在对问题求解时，总是<strong>做出在当前看来是最好的选择</strong>。也就是说，不从整体最优上加以考虑，它所做出的仅仅是在某种意义上的<strong>局部最优解</strong>。<br> 贪心算法没有固定的算法框架，算法设计的关键是贪心策略的选择。必须注意的是，贪心算法不是对所有问题都能得到整体最优解，选择的贪心策略必须具备无后效性（即某个状态以后的过程不会影响以前的状态，只与当前状态有关。）<br><strong>所以，对所采用的贪心策略一定要仔细分析其是否满足无后效性。</strong></p>
-<h1 id="二、贪心算法的基本思路"><a href="#二、贪心算法的基本思路" class="headerlink" title="二、贪心算法的基本思路"></a>二、贪心算法的基本思路</h1><ul>
-<li>建立数学模型来描述问题</li>
-<li>把求解的问题分成若干个子问题</li>
-<li>对每个子问题求解，得到子问题的局部最优解</li>
-<li>把子问题的解局部最优解合成原来问题的一个解</li>
+<h3 id="常见的join查询"><a href="#常见的join查询" class="headerlink" title="常见的join查询"></a>常见的join查询</h3><img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210324103152493.png" alt="image-20210324103152493" style="zoom:50%;" />
+
+<img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210324103248647.png" alt="image-20210324103248647" style="zoom:50%;" />
+
+<h3 id="七种join理论"><a href="#七种join理论" class="headerlink" title="七种join理论"></a>七种join理论</h3><img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210324105825223.png" alt="image-20210324105825223" style="zoom:50%;" />
+
+<h3 id="索引是什么？"><a href="#索引是什么？" class="headerlink" title="索引是什么？"></a>索引是什么？</h3><p>Mysql官方的定义为索引（Index）是帮助MySql高效获取数据的数据结构，本质就是数据结构</p>
+<p>索引的目的就是为了提高查询效率，类似于字典</p>
+<h3 id="索引的创建方式"><a href="#索引的创建方式" class="headerlink" title="索引的创建方式"></a>索引的创建方式</h3><p>  主键</p>
+<p>  alter table tableName add primary key(column_list);</p>
+<p>  唯一索引</p>
+<p>  alter table tableName add unique index index_name(column_list);</p>
+<p>  普通索引</p>
+<p>  alter table tableName add index index_name(column_list);</p>
+<p>  全文索引</p>
+<p>  alter table tableName add fullText index_name index_name(column_list);</p>
+<h3 id="哪些字段适合创建索引？"><a href="#哪些字段适合创建索引？" class="headerlink" title="哪些字段适合创建索引？"></a>哪些字段适合创建索引？</h3><p>主键自动创建索引<br>频繁作为查询条件的应该作为索引<br>查询中与其他表关联的字段<br>大部分情况下选择组合索引<br>查询中排序的字段<br>查询中统计或者分组的字段</p>
+<h3 id="哪些情况不适合建索引"><a href="#哪些情况不适合建索引" class="headerlink" title="哪些情况不适合建索引"></a>哪些情况不适合建索引</h3><p>表记录太少   300万<br>经常增删改的列<br>数据重复且分布平均的字段</p>
+<img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210325173119006.png" alt="image-20210325173119006" style="zoom:50%;" />
+
+<h3 id="索引的类型"><a href="#索引的类型" class="headerlink" title="索引的类型"></a>索引的类型</h3><p>聚集索引、非聚集索引、聚簇索引、稀疏索引、稠密索引</p>
+<h4 id="聚集索引"><a href="#聚集索引" class="headerlink" title="聚集索引"></a>聚集索引</h4><h4 id="非聚集索引"><a href="#非聚集索引" class="headerlink" title="非聚集索引"></a>非聚集索引</h4><h4 id="聚簇索引"><a href="#聚簇索引" class="headerlink" title="聚簇索引"></a>聚簇索引</h4><h4 id="稀疏索引"><a href="#稀疏索引" class="headerlink" title="稀疏索引"></a>稀疏索引</h4><h4 id="稠密索引"><a href="#稠密索引" class="headerlink" title="稠密索引"></a>稠密索引</h4><h2 id="5-mysql-性能分析explain关键字"><a href="#5-mysql-性能分析explain关键字" class="headerlink" title="5. mysql 性能分析explain关键字"></a>5. mysql 性能分析explain关键字</h2><ol>
+<li><p>能干嘛</p>
+<p>表的读取顺序</p>
+<p>数据读取的读取操作类型</p>
+<p>哪些索引可以被使用</p>
+<p>哪些索引实际被使用</p>
+<p>表之间的引用</p>
+<p>每张表有多少行被优化器查询</p>
+<img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210325180332331.png" alt="image-20210325180332331" style="zoom:50%;" />
+
+<img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210325180416947.png" alt="image-20210325180416947" style="zoom:50%;" /></li>
+<li><p>id 介绍</p>
+<p>谁的顺序高，谁先执行，如果相同则从上到下执行</p>
+</li>
+<li><p>select_type介绍</p>
+<p>simple：简单的select查询，不包含子查询或者union</p>
+<p>primary：查询中包含复杂的子部分，最外层被标记为</p>
+<p>subquery：在select 或者where列表中包含子查询</p>
+<p>derived：临时表</p>
+<p>union：若第二个select出现在union之后，被标记为union，若union包含在from子句的子查询中，外层select奖杯标记为derived</p>
+<p>union result：从union表获取结果的select。</p>
+</li>
+<li><p>type介绍</p>
+<p>all：     全表扫描</p>
+<p>index：全索引扫描</p>
+<p>range：只检索给定范围内的检索</p>
+<p>ref：非唯一性索引扫描，返回匹配某个单独值的所有行。本质上也是一种索引访问，他返回所有匹配某个单独值的行。</p>
+<p>eq_ref：唯一性索引扫描，对于每个索引建，表中只有一条记录与之匹配，常见主键或者唯一索引扫描</p>
+<p>const：表示通过索引一次就找到了，const用于比较primary key 或者unique索引。因为只匹配一行数据，所以很快。</p>
+<p>system ：表只有一行数据，const类型的特例，平时不会出现。</p>
+<p>null</p>
+</li>
+</ol>
+<p>  从好到差依次为：system&gt;const&gt;eq_ref&gt;ref&gt;range&gt;index&gt;all</p>
+<ol start="5">
+<li>possible_keys key key_len</li>
+</ol>
+<p>possible_keys:显示可能应用到这张表中的索引，一个或多个，查询涉及到的字段上若存在索引，则该索引将被列出，但不一定被查询使用</p>
+<p>key：实际使用的索引</p>
+<p>key_len:表示索引中使用的字节数，可通过该列计算查询中使用的索引的长度，在不损失精确性的情况下，长度越短越好</p>
+<ol start="6">
+<li>rows 介绍</li>
+</ol>
+<p>根据表统计信息及索引选用情况，大致估算出找出所需的记录所需要读取的行数。</p>
+<ol start="7">
+<li><p>extra介绍</p>
+<p>Using filesort：文件内排序</p>
+<p>using temporary：使用临时表</p>
+<p>using index：表示不错</p>
+</li>
+</ol>
+<h2 id="6-索引优化及失效的情况"><a href="#6-索引优化及失效的情况" class="headerlink" title="6.索引优化及失效的情况"></a>6.索引优化及失效的情况</h2><img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210326101743536.png" alt="image-20210326101743536" style="zoom:50%;" />
+
+<p>最佳左前缀法则：1.带头大哥不能死2.中间兄弟不能断</p>
+<img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210326133458510.png" alt="image-20210326133458510" style="zoom:50%;" />
+
+<p>==小表驱动大表==</p>
+<p>Exists 或者in 的使用</p>
+<p>如果 A小于b 则用 in</p>
+<p>select * from a where id=(select id from b)</p>
+<p>如果 a表的数据集大约b，则用exists</p>
+<p>select * from a where exists (select 1 from b where a.id=b.id)</p>
+<p>==为排序增加索引==</p>
+<img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210326155852987.png" alt="image-20210326155852987" style="zoom:50%;" />
+
+
+
+
+
+
+
+<h2 id="7-实际过程中分析sql"><a href="#7-实际过程中分析sql" class="headerlink" title="7.实际过程中分析sql"></a>7.实际过程中分析sql</h2><ol>
+<li><p>观察，至少跑一天，查看生产环境的慢sql</p>
+</li>
+<li><p>开启慢查询日志</p>
+</li>
+<li><p>explain+慢sql分析</p>
+</li>
+<li><p>show profile</p>
+</li>
+<li><p>运维经理或者dba性能调优</p>
+</li>
+</ol>
+<h2 id="8-慢sql日志查询"><a href="#8-慢sql日志查询" class="headerlink" title="8. 慢sql日志查询"></a>8. 慢sql日志查询</h2><p>  默认mysql数据库没有开启慢查询日志</p>
+<p>配置一下</p>
+<p>借助 mysqldumpslow去查看</p>
+<img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210326212257952.png" alt="image-20210326212257952" style="zoom:50%;" />
+
+<img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210326212349462.png" alt="image-20210326212349462" style="zoom:50%;" />
+
+<h2 id="9-Show-profiles-使用（记录曾经执行过的sql）"><a href="#9-Show-profiles-使用（记录曾经执行过的sql）" class="headerlink" title="9. Show profiles 使用（记录曾经执行过的sql）"></a>9. Show profiles 使用（记录曾经执行过的sql）</h2><p>使用步骤</p>
+<ol>
+<li><p>查询profiles 状态</p>
+<p>show VARIABLES like ‘profiling%’</p>
+<img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210329091508015.png" alt="image-20210329091508015" style="zoom:50%;" /></li>
+<li><p>开启profiles</p>
+<p>set profiling=on;(已经开启过的可以不开启)</p>
+</li>
+<li><p>show profiles; </p>
+</li>
+</ol>
+<p>查询曾经使用过的sql</p>
+<img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210329085942082.png" alt="image-20210329085942082" style="zoom:50%;" />
+
+<ol start="4">
+<li><p>show profile cpu,block io for query **(Query_id);</p>
+<img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210329091856611.png" alt="image-20210329091856611" style="zoom:50%;" />
+
+<ol start="5">
+<li><p>结论</p>
+<img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210329110501104.png" alt="image-20210329110501104" style="zoom:50%;" /></li>
+</ol>
+</li>
+</ol>
+<p>如果sql中出现这4个问题，则表示问题有点大</p>
+<h2 id="10-全局查询日志"><a href="#10-全局查询日志" class="headerlink" title="10.全局查询日志"></a>10.全局查询日志</h2><p>==永远不用在生产环境启用这个功能==</p>
+<p>set global general_log =1;</p>
+<p>Set global log_output=’TABLE’;</p>
+<p>select * from mysql.general_log</p>
+<h2 id="11-Mysql锁机制-MyIsam"><a href="#11-Mysql锁机制-MyIsam" class="headerlink" title="11.Mysql锁机制(MyIsam)"></a>11.Mysql锁机制(MyIsam)</h2><p>查看锁的状态</p>
+<p>   show open tables;  </p>
+<p>   unlock tables;</p>
+<p>按照锁的类型来分</p>
+<ul>
+<li><p>读锁（共享锁）</p>
+<p>命令 lock table * read;</p>
+<p>加上读锁，自己能写这个表，不能读写其他表，不能update这个表</p>
+<p>其他 能读 不能写（死锁）</p>
+</li>
+<li><p>写锁（排他锁）</p>
+<p>命令 lock table * write;</p>
+<img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210329154023885.png" alt="image-20210329154023885" style="zoom:50%;" />
+
+<img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210329155557747.png" alt="image-20210329155557747" style="zoom:50%;" />
+
+<p>下面的table locks waited 越高，证明性能越不好。</p>
+</li>
 </ul>
-<h1 id="三、该算法存在的问题"><a href="#三、该算法存在的问题" class="headerlink" title="三、该算法存在的问题"></a>三、该算法存在的问题</h1><ul>
-<li>不能保证求得的最后解是最佳的</li>
-<li>不能用来求最大值或最小值的问题</li>
-<li>只能求满足某些约束条件的可行解的范围</li>
-</ul>
-<h1 id="四、贪心算法适用的问题"><a href="#四、贪心算法适用的问题" class="headerlink" title="四、贪心算法适用的问题"></a>四、贪心算法适用的问题</h1><p><strong>贪心策略适用的前提是：局部最优策略能导致产生全局最优解。</strong><br> 实际上，贪心算法适用的情况很少。一般对一个问题分析是否适用于贪心算法，可以先选择该问题下的几个实际数据进行分析，就可以做出判断。</p>
-<h1 id="五、贪心选择性质"><a href="#五、贪心选择性质" class="headerlink" title="五、贪心选择性质"></a>五、贪心选择性质</h1><p>所谓贪心选择性质是指所求问题的整体最优解可以通过一系列局部最优的选择，换句话说，当考虑做何种选择的时候，我们只考虑对当前问题最佳的选择而不考虑子问题的结果。这是贪心算法可行的第一个基本要素。贪心算法以迭代的方式作出相继的贪心选择，每作一次贪心选择就将所求问题简化为规模更小的子问题。<strong>对于一个具体问题，要确定它是否具有贪心选择性质，必须证明每一步所作的贪心选择最终导致问题的整体最优解。</strong><br> 当一个问题的最优解包含其子问题的最优解时，称此问题具有最优子结构性质。问题的最优子结构性质是该问题可用贪心算法求解的关键特征。</p>
-<h1 id="六、贪心算法的实现框架"><a href="#六、贪心算法的实现框架" class="headerlink" title="六、贪心算法的实现框架"></a>六、贪心算法的实现框架</h1><p> 从问题的某一初始解出发：<br> while (朝给定总目标前进一步)<br> {<br> 利用可行的决策，求出可行解的一个解元素。<br> }<br> 由所有解元素组合成问题的一个可行解；</p>
-<h1 id="五、例题分析"><a href="#五、例题分析" class="headerlink" title="五、例题分析"></a>五、例题分析</h1><p> 【背包问题】有一个背包，容量是M=150，有7个物品，物品可以分割成任意大小。要求尽可能让装入背包中的物品总价值最大，但不能超过总容量。<br> 物品：A     B    C    D E F G<br> 重量：35  30 60 50 40 10 25<br> 价值：10 40 30 50 35 40 30<br> 分析：<br> 目标函数： ∑pi最大<br> 约束条件是装入的物品总质量不超过背包容量：∑wi&lt;=M( M=150)<br> （1）根据贪心的策略，每次挑选价值最大的物品装入背包，得到的结果是否最优？<br> （2）每次挑选所占重量最小的物品装入是否能得到最优解？<br> （3）每次选取单位重量价值最大的物品，成为解本题的策略</p>
-<p>值得注意的是，贪心算法并不是完全不可以使用，贪心策略一旦经过证明成立后，它就是一种高效的算法。比如，<strong>求最小生成树的Prim算法和Kruskal算法都是漂亮的贪心算法</strong>。<br> 贪心算法还是很常见的算法之一，这是由于它简单易行，构造贪心策略不是很困难。<br> 可惜的是，它需要证明后才能真正运用到题目的算法中。<br> 一般来说，贪心算法的证明围绕着：整个问题的最优解一定由在贪心策略中存在的子问题的最优解得来的。<br> 对于例题中的3种贪心策略，都是无法成立（无法被证明）的，解释如下：<br> 贪心策略：选取价值最大者。反例：</p>
-<p>W=30</p>
-<p>物品：A B C</p>
-<p>重量：28 12 12</p>
-<p>价值：30 20 20</p>
-<p>根据策略，首先选取物品A，接下来就无法再选取了，可是，选取B、C则更好。</p>
-<p>（2）贪心策略：选取重量最小。它的反例与第一种策略的反例差不多。</p>
-<p>（3）贪心策略：选取单位重量价值最大的物品。反例：</p>
-<p>W=30</p>
-<p>物品：A B C</p>
-<p>重量：28 20 10</p>
-<p>价值：28 20 10</p>
-<p>根据策略，三种物品单位重量价值一样，程序无法依据现有策略作出判断，如果选择A，则答案错误。但是果在条件中加一句当遇见单位价值相同的时候,优先装重量小的,这样的问题就可以解决.</p>
-<p>所以需要说明的是，贪心算法可以与随机化算法一起使用，具体的例子就不再多举了。（因为这一类算法普及性不高，而且技术含量是非常高的，需要通过一些反例确定随机的对象是什么，随机程度如何，但也是不能保证完全正确，只能是极大的几率正确）。</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-11-17T15:18:47.000Z" title="2020/11/17 下午11:18:47">2020-11-17</time>发表</span><span class="level-item"><time dateTime="2020-11-17T15:18:47.000Z" title="2020/11/17 下午11:18:47">2020-11-17</time>更新</span><span class="level-item">几秒读完 (大约0个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/undefined/"> </a></h1><div class="content"></div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/page/8/">上一页</a></div><div class="pagination-next"><a href="/page/10/">下一页</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/8/">8</a></li><li><a class="pagination-link is-current" href="/page/9/">9</a></li><li><a class="pagination-link" href="/page/10/">10</a></li><li><a class="pagination-link" href="/page/11/">11</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-09-16T01:58:24.000Z">2021-09-16</time></p><p class="title"><a href="/design-pattern/">状态模式</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-09-16T01:58:24.000Z">2021-09-16</time></p><p class="title"><a href="/design-pattern-factory/">状态模式</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-09-16T01:58:12.000Z">2021-09-16</time></p><p class="title"><a href="/design-pattern-factory/">中介者模式</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-09-16T01:57:58.000Z">2021-09-16</time></p><p class="title"><a href="/design-pattern-factory/">责任链模式</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-09-16T01:57:40.000Z">2021-09-16</time></p><p class="title"><a href="/design-pattern-factory/">模板方法模式</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/09/"><span class="level-start"><span class="level-item">九月 2021</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/08/"><span class="level-start"><span class="level-item">八月 2021</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/07/"><span class="level-start"><span class="level-item">七月 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/06/"><span class="level-start"><span class="level-item">六月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">五月 2021</span></span><span class="level-end"><span class="level-item tag">13</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/04/"><span class="level-start"><span class="level-item">四月 2021</span></span><span class="level-end"><span class="level-item tag">19</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/03/"><span class="level-start"><span class="level-item">三月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/01/"><span class="level-start"><span class="level-item">一月 2021</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/12/"><span class="level-start"><span class="level-item">十二月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/11/"><span class="level-start"><span class="level-item">十一月 2020</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/10/"><span class="level-start"><span class="level-item">十月 2020</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/09/"><span class="level-start"><span class="level-item">九月 2020</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/clickhouse/"><span class="tag">clickhouse</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/docker/"><span class="tag">docker</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/es/"><span class="tag">es</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/flink/"><span class="tag">flink</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/java/"><span class="tag">java</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/jvm/"><span class="tag">jvm</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kafka/"><span class="tag">kafka</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/linux/"><span class="tag">linux</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/log4j2/"><span class="tag">log4j2</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/mysql/"><span class="tag">mysql</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/redis/"><span class="tag">redis</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/spring/"><span class="tag">spring</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%89%91%E6%8C%87offer/"><span class="tag">剑指offer</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9/"><span class="tag">基础知识点</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"><span class="tag">大数据</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%B7%A5%E5%85%B7/"><span class="tag">工具</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"><span class="tag">微服务</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"><span class="tag">排序算法</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%BA%90%E7%A0%81/"><span class="tag">源码</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98/"><span class="tag">线上问题</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><span class="tag">设计模式</span><span class="tag">16</span></a></div></div></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="https://octodex.github.com/images/daftpunktocat-thomas.gif" alt="mrhy1996"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">mrhy1996</p><p class="is-size-6 is-block">立志登山揽月</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 · 上海</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">74</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">22</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Mrhy1996/" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Mrhy1996"><i class="fab fa-github"></i></a></div></div></div><!--!--></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="mrhy&#039;s blogs" height="28"></a><p class="is-size-7"><span>&copy; 2021 mrhy</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+<h2 id="12-mysql-事务"><a href="#12-mysql-事务" class="headerlink" title="12. mysql 事务"></a>12. mysql 事务</h2><img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210329155829159.png" alt="image-20210329155829159" style="zoom:50%;" />
+
+<h2 id="13-mysql-事务隔离级别"><a href="#13-mysql-事务隔离级别" class="headerlink" title="13. mysql  事务隔离级别"></a>13. mysql  事务隔离级别</h2><img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210329160118303.png" alt="image-20210329160118303" style="zoom:50%;" />
+
+<h2 id="14-mysql-行锁"><a href="#14-mysql-行锁" class="headerlink" title="14. mysql 行锁"></a>14. mysql 行锁</h2><h2 id="15-索引操作不当，行锁变成表锁"><a href="#15-索引操作不当，行锁变成表锁" class="headerlink" title="15. 索引操作不当，行锁变成表锁"></a>15. 索引操作不当，行锁变成表锁</h2><h2 id="16-间隙锁"><a href="#16-间隙锁" class="headerlink" title="16. 间隙锁"></a>16. 间隙锁</h2><img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210329223734308.png" alt="image-20210329223734308" style="zoom:50%;" />
+
+<h2 id="17-如何锁定一行？"><a href="#17-如何锁定一行？" class="headerlink" title="17. 如何锁定一行？"></a>17. 如何锁定一行？</h2><p>for update</p>
+<h2 id="18-性能总结"><a href="#18-性能总结" class="headerlink" title="18 性能总结"></a>18 性能总结</h2><p>​    <img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210329225912024.png" alt="image-20210329225912024" style="zoom:50%;" /></p>
+<h2 id="19-mysql-主从复制"><a href="#19-mysql-主从复制" class="headerlink" title="19 mysql 主从复制"></a>19 mysql 主从复制</h2><blockquote>
+<p>原理</p>
+</blockquote>
+<p>slave会从master读取binlog日志来进行同步。</p>
+<blockquote>
+<p> 三步骤+原理图</p>
+</blockquote>
+  <img src="/Users/mrhy/Library/Application Support/typora-user-images/image-20210330090221517.png" alt="image-20210330090221517" style="zoom:50%;" />
+
+<blockquote>
+<p> 步骤</p>
+</blockquote>
+<ol>
+<li><p>修改主机配置文件</p>
+<p>server-id=1;</p>
+<p>log-bin=自己本地路径/mysqlin</p>
+</li>
+<li><p>从机修改id</p>
+<p>server-id=2;</p>
+<p>log-bin=mysql-bin</p>
+</li>
+<li><p>重启服务</p>
+</li>
+<li><p>主机授权</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">grant</span> replication slave, replication client <span class="keyword">on</span> <span class="operator">*</span>.<span class="operator">*</span> <span class="keyword">to</span> <span class="string">&#x27;rep&#x27;</span>@<span class="string">&#x27;192.168.159.%&#x27;</span> identified <span class="keyword">by</span> <span class="string">&#x27;Mysql@123&#x27;</span>;</span><br><span class="line">flush privileges</span><br></pre></td></tr></table></figure></li>
+<li><p>查看主机状态</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">show</span> master status;</span><br></pre></td></tr></table></figure></li>
+<li><p>从机配置</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">CHANGE MASTER <span class="keyword">TO</span> </span><br><span class="line">MASTER_HOST<span class="operator">=</span><span class="string">&#x27;172.16.1.52&#x27;</span>,  #这是主库的IP（域名也可以需要做解析）</span><br><span class="line">MASTER_PORT<span class="operator">=</span><span class="number">3306</span>,              #主库的端口，从库端口和主库不可以相同</span><br><span class="line">MASTER_USER<span class="operator">=</span><span class="string">&#x27;rep&#x27;</span>,            #这是主库上创建用来复制的用户rep</span><br><span class="line">MASTER_PASSWORD<span class="operator">=</span><span class="string">&#x27;123456&#x27;</span>    #rep的密码</span><br><span class="line">MASTER_LOG_FILE<span class="operator">=</span><span class="string">&#x27;mysql-bin.000025&#x27;</span>, #这里是<span class="keyword">show</span> master</span><br><span class="line">status时看到的查询二进制日志文件名称，这里不能多空格</span><br><span class="line">MASTER_LOG_POS<span class="operator">=</span><span class="number">9155</span>;       #这里是<span class="keyword">show</span> master status时看到的二进制日志偏移量，不能多空格</span><br></pre></td></tr></table></figure></li>
+<li><p>开启从机复制</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">start</span> slave ;</span><br></pre></td></tr></table></figure></li>
+<li><p>查看从机状态</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">show</span> slave status\G</span><br></pre></td></tr></table></figure>
+
+<p>如果Slave_IO_RUNING:YES 和 SLAVE_SQL_RUNING:YES 则证明配置成功;</p>
+</li>
+<li><p>停从机<br> stop slave;</p>
+</li>
+</ol>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-03-22T08:34:31.000Z" title="2021/3/22 下午4:34:31">2021-03-22</time>发表</span><span class="level-item"><time dateTime="2021-03-22T08:34:31.000Z" title="2021/3/22 下午4:34:31">2021-03-22</time>更新</span><span class="level-item">2 分钟读完 (大约341个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/undefined/"> </a></h1><div class="content"><h1 id="1-最佳页面置换算法（Optimal）"><a href="#1-最佳页面置换算法（Optimal）" class="headerlink" title="1.最佳页面置换算法（Optimal）"></a>1.最佳页面置换算法（Optimal）</h1><p>是由Belady于1966年提出来的一种理论上的页面置换算法，其所选择的淘汰页面是以后永久不使用，或者是在未来最长时间内不再被访问的页面。</p>
+<p>优点：最少的缺页率</p>
+<p>实现：只是理论上的，具体实现不了.因为人们目前还无法预知，一个页面在未来不会被访问到。 </p>
+<h1 id="2-FIFO先进先出页面置换算法"><a href="#2-FIFO先进先出页面置换算法" class="headerlink" title="2.FIFO先进先出页面置换算法"></a>2.FIFO先进先出页面置换算法</h1><p>优先淘汰最早进入内存的页面，亦即在内存中驻留时间最久的页面。该算法实现简单，只需把调入内存的页面根据先后次序链接成队列，设置一个指针总指向最早的页面。但该算法与进程实际运行时的规律不适应，因为在进程中，有的页面经常被访问。</p>
+<h1 id="3-LRU（最近最久未使用）的设计原则"><a href="#3-LRU（最近最久未使用）的设计原则" class="headerlink" title="3.LRU（最近最久未使用）的设计原则"></a>3.LRU（最近最久未使用）的设计原则</h1><p>LRU算法的设计原则是：<strong>如果一个数据在最近一段时间没有被访问到，那么在将来它被访问的可能性也很小</strong>。也就是说，当限定的空间已存满数据时，应当把最久没有被访问到的数据淘汰。</p>
+<p>2.</p>
+</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/page/8/">上一页</a></div><div class="pagination-next"><a href="/page/10/">下一页</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/8/">8</a></li><li><a class="pagination-link is-current" href="/page/9/">9</a></li><li><a class="pagination-link" href="/page/10/">10</a></li><li><a class="pagination-link" href="/page/11/">11</a></li><li><a class="pagination-link" href="/page/12/">12</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-06-05T03:11:18.000Z">2022-06-05</time></p><p class="title"><a href="/dubbo-introduce/">dubbo的简介与实际开发</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-15T01:55:06.000Z">2022-04-15</time></p><p class="title"><a href="/bloom-filter/">布隆过滤器</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-02-20T05:27:47.000Z">2022-02-20</time></p><p class="title"><a href="/dailyRecord/">日常小记录</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-25T06:12:46.000Z">2022-01-25</time></p><p class="title"><a href="/spring-retry/">Springboot使用SpringRetry</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-26T07:48:59.000Z">2021-11-26</time></p><p class="title"><a href="/jenkins/">Jenkins的搭建与使用</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/06/"><span class="level-start"><span class="level-item">六月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/04/"><span class="level-start"><span class="level-item">四月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/02/"><span class="level-start"><span class="level-item">二月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/01/"><span class="level-start"><span class="level-item">一月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/11/"><span class="level-start"><span class="level-item">十一月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/10/"><span class="level-start"><span class="level-item">十月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/09/"><span class="level-start"><span class="level-item">九月 2021</span></span><span class="level-end"><span class="level-item tag">13</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/08/"><span class="level-start"><span class="level-item">八月 2021</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/07/"><span class="level-start"><span class="level-item">七月 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/06/"><span class="level-start"><span class="level-item">六月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">五月 2021</span></span><span class="level-end"><span class="level-item tag">13</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/04/"><span class="level-start"><span class="level-item">四月 2021</span></span><span class="level-end"><span class="level-item tag">19</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/03/"><span class="level-start"><span class="level-item">三月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/01/"><span class="level-start"><span class="level-item">一月 2021</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/12/"><span class="level-start"><span class="level-item">十二月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/11/"><span class="level-start"><span class="level-item">十一月 2020</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/10/"><span class="level-start"><span class="level-item">十月 2020</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/09/"><span class="level-start"><span class="level-item">九月 2020</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/JVM/"><span class="tag">JVM</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/clickhouse/"><span class="tag">clickhouse</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/docker/"><span class="tag">docker</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/es/"><span class="tag">es</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/flink/"><span class="tag">flink</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/java/"><span class="tag">java</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/jenkins/"><span class="tag">jenkins</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/jvm/"><span class="tag">jvm</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kafka/"><span class="tag">kafka</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/linux/"><span class="tag">linux</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/log4j2/"><span class="tag">log4j2</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/mysql/"><span class="tag">mysql</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/redis/"><span class="tag">redis</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/spring/"><span class="tag">spring</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%89%91%E6%8C%87offer/"><span class="tag">剑指offer</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9/"><span class="tag">基础知识点</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"><span class="tag">大数据</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%B7%A5%E5%85%B7/"><span class="tag">工具</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"><span class="tag">微服务</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"><span class="tag">排序算法</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%BA%90%E7%A0%81/"><span class="tag">源码</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98/"><span class="tag">线上问题</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><span class="tag">设计模式</span><span class="tag">16</span></a></div></div></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="https://octodex.github.com/images/daftpunktocat-thomas.gif" alt="mrhy1996"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">mrhy1996</p><p class="is-size-6 is-block">立志登山揽月</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 · 上海</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">82</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">24</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Mrhy1996/" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Mrhy1996"><i class="fab fa-github"></i></a></div></div></div><!--!--></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="mrhy&#039;s blogs" height="28"></a><p class="is-size-7"><span>&copy; 2022 mrhy</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
